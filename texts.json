@@ -1,0 +1,13 @@
+[
+  {
+    "text_id": "A01",
+    "topic": "health",
+    "text": "This is a placeholder text. Replace this entire array with your actual texts from your dataset. Each object should have text_id, topic, and text fields."
+  },
+  {
+    "text_id": "A02",
+    "topic": "politics",
+    "text": "Example text 2. The order of items in this array determines the sequential assignment order."
+  }
+]
+
