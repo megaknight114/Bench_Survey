@@ -342,3 +342,4 @@ document.getElementById('consent-form')?.addEventListener('submit', handleConsen
 document.getElementById('survey-form')?.addEventListener('submit', handleSurveySubmit);
 document.getElementById('next-btn')?.addEventListener('click', handleNextPage);
 document.getElementById('back-btn')?.addEventListener('click', handleBackPage);
+document.getElementById('repeat-btn')?.addEventListener('click', resetParticipant);
