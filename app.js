@@ -98,6 +98,27 @@ function normalizeSurveyDom() {
   }
 }
 
+function updatePurposeFreeTextVisibility() {
+  const yes = document.getElementById('purpose-yes');
+  const no = document.getElementById('purpose-no');
+  const block = document.getElementById('purpose-free-text-block');
+  const textarea = document.getElementById('purpose-text');
+  if (!yes || !no || !block || !textarea) return;
+
+  const hasPurpose = yes.checked ? 'Yes' : no.checked ? 'No' : '';
+  const shouldShow = hasPurpose === 'Yes';
+
+  block.style.display = shouldShow ? 'block' : 'none';
+  textarea.required = shouldShow;
+
+  if (!shouldShow) {
+    textarea.value = '';
+  } else {
+    // Nudge the user to answer immediately.
+    try { textarea.focus(); } catch (e) {}
+  }
+}
+
 /**
  * Load texts.json from the configured URL
  */
@@ -273,18 +294,19 @@ async function handleSurveySubmit(event) {
   };
   
   // Validate required fields
+  const purposeRequired = formData.has_purpose === 'Yes';
   if (
     !formData.topic_familiarity ||
     !formData.credibility ||
     !formData.willingness_to_share ||
     !formData.has_purpose ||
-    !formData.purpose_free_text.trim()
+    (purposeRequired && !formData.purpose_free_text.trim())
   ) {
     const missing = [];
     if (!formData.credibility) missing.push('Credibility');
     if (!formData.willingness_to_share) missing.push('Willingness to Share');
     if (!formData.has_purpose) missing.push('Has Purpose');
-    if (!formData.purpose_free_text.trim()) missing.push('Purpose (3.2)');
+    if (purposeRequired && !formData.purpose_free_text.trim()) missing.push('Purpose (3.2)');
     if (!formData.topic_familiarity) missing.push('Topic Familiarity');
 
     alert('Please answer all required questions: ' + missing.join(', ') + '.');
@@ -355,3 +377,6 @@ document.getElementById('survey-form')?.addEventListener('submit', handleSurveyS
 document.getElementById('next-btn')?.addEventListener('click', handleNextPage);
 document.getElementById('back-btn')?.addEventListener('click', handleBackPage);
 document.getElementById('repeat-btn')?.addEventListener('click', resetParticipant);
+document.getElementById('purpose-yes')?.addEventListener('change', updatePurposeFreeTextVisibility);
+document.getElementById('purpose-no')?.addEventListener('change', updatePurposeFreeTextVisibility);
+updatePurposeFreeTextVisibility();
