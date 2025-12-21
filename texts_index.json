@@ -1,0 +1,1442 @@
+[
+  {
+    "text_id": "baseline_qwen3-0.6b_001",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_001",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_001",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_001",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_001",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_001",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_002",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_002",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_002",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_002",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_002",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_002",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_003",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_003",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_003",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_003",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_003",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_003",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_004",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_004",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_004",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_004",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_004",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_004",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_005",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_005",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_005",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_005",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_005",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_005",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_006",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_006",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_006",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_006",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_006",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_006",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_007",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_007",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_007",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_007",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_007",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_007",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_008",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_008",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_008",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_008",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_008",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_008",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_009",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_009",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_009",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_009",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_009",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_009",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_010",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_010",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_010",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_010",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_010",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_010",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_011",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_011",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_011",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_011",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_011",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_011",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_012",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_012",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_012",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_012",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_012",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_012",
+    "topic": "healthcare"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_013",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_013",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_013",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_013",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_013",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_013",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_014",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_014",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_014",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_014",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_014",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_014",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_015",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_015",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_015",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_015",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_015",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_015",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_016",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_016",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_016",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_016",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_016",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_016",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_017",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_017",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_017",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_017",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_017",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_017",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_018",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_018",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_018",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_018",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_018",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_018",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_019",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_019",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_019",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_019",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_019",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_019",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_020",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_020",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_020",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_020",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_020",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_020",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_021",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_021",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_021",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_021",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_021",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_021",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_022",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_022",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_022",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_022",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_022",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_022",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_023",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_023",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_023",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_023",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_023",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_023",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_024",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_024",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_024",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_024",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_024",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_024",
+    "topic": "politics"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_025",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_025",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_025",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_025",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_025",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_025",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_026",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_026",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_026",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_026",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_026",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_026",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_027",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_027",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_027",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_027",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_027",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_027",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_028",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_028",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_028",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_028",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_028",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_028",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_029",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_029",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_029",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_029",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_029",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_029",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_030",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_030",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_030",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_030",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_030",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_030",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_031",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_031",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_031",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_031",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_031",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_031",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_032",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_032",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_032",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_032",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_032",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_032",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_033",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_033",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_033",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_033",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_033",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_033",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_034",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_034",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_034",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_034",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_034",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_034",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_035",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_035",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_035",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_035",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_035",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_035",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_036",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_036",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_036",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_036",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_036",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_036",
+    "topic": "finance"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_037",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_037",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_037",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_037",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_037",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_037",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_038",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_038",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_038",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_038",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_038",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_038",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_039",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_039",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_039",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_039",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_039",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_039",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_040",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_040",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_040",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_040",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_040",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_040",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_041",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_041",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_041",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_041",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_041",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_041",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_042",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_042",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_042",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_042",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_042",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_042",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_043",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_043",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_043",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_043",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_043",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_043",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_044",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_044",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_044",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_044",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_044",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_044",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_045",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_045",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_045",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_045",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_045",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_045",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_046",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_046",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_046",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_046",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_046",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_046",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_047",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_047",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_047",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_047",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_047",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_047",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_048",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_048",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_048",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_048",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_048",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_048",
+    "topic": "technology"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_049",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_049",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_049",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_049",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_049",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_049",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_050",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_050",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_050",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_050",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_050",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_050",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_051",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_051",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_051",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_051",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_051",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_051",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_052",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_052",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_052",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_052",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_052",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_052",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_053",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_053",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_053",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_053",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_053",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_053",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_054",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_054",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_054",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_054",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_054",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_054",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_055",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_055",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_055",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_055",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_055",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_055",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_056",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_056",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_056",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_056",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_056",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_056",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_057",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_057",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_057",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_057",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_057",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_057",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_058",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_058",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_058",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_058",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_058",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_058",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_059",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_059",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_059",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_059",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_059",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_059",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-0.6b_060",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-1.7b_060",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-14b_060",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_060",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-4b_060",
+    "topic": "environment"
+  },
+  {
+    "text_id": "baseline_qwen3-8b_060",
+    "topic": "environment"
+  }
+]
