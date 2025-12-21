@@ -5,6 +5,8 @@ let assignedText = null;
 let textsMap = {}; // text_id -> {text, topic}
 let consentGiven = false;
 
+const TEXTS_VERSION_STORAGE_KEY = 'texts_version';
+
 // Prevent the browser from restoring scroll position (can look like "auto-jumping" to page 2).
 if (typeof history !== 'undefined' && 'scrollRestoration' in history) {
   try { history.scrollRestoration = 'manual'; } catch (e) {}
@@ -42,6 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!participantId) {
     participantId = crypto.randomUUID();
     localStorage.setItem('participant_id', participantId);
+  }
+
+  // Cache-bust localStorage assignment if texts.json version changes.
+  // This prevents a stale assigned_text pointing to a text_id that is no longer present.
+  if (CONFIG && CONFIG.TEXTS_VERSION) {
+    const prev = localStorage.getItem(TEXTS_VERSION_STORAGE_KEY);
+    if (prev !== CONFIG.TEXTS_VERSION) {
+      localStorage.setItem(TEXTS_VERSION_STORAGE_KEY, CONFIG.TEXTS_VERSION);
+      localStorage.removeItem('assigned_text');
+    }
   }
 
   // Load texts.json
@@ -90,7 +102,7 @@ function normalizeSurveyDom() {
  * Load texts.json from the configured URL
  */
 async function loadTexts() {
-  const response = await fetch(CONFIG.TEXTS_JSON_URL);
+  const response = await fetch(CONFIG.TEXTS_JSON_URL, { cache: 'no-store' });
   if (!response.ok) {
     throw new Error('Failed to load texts.json');
   }
