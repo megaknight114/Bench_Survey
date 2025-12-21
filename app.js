@@ -34,6 +34,9 @@ function showSurveyPage(page) {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
+  // Safety: ensure familiarity block is inside page 2 and placed before the buttons.
+  normalizeSurveyDom();
+
   // Generate or retrieve participant ID
   participantId = localStorage.getItem('participant_id');
   if (!participantId) {
@@ -58,6 +61,30 @@ document.addEventListener('DOMContentLoaded', function() {
     showError('Failed to load survey texts. Please refresh the page.');
   });
 });
+
+function normalizeSurveyDom() {
+  const page2 = document.getElementById('survey-page-2');
+  const backBtn = document.getElementById('back-btn');
+  const submitBtn = document.getElementById('submit-btn');
+  const familiarityBlock = document.getElementById('topic-familiarity-block');
+  if (!page2 || !familiarityBlock) return;
+
+  // Always move the block into page2 if it escaped due to HTML auto-correction or cached old markup.
+  if (!page2.contains(familiarityBlock)) {
+    page2.appendChild(familiarityBlock);
+  }
+
+  // Ensure the block is right before the buttons.
+  const anchor = backBtn || submitBtn;
+  if (anchor && anchor.parentNode === page2) {
+    page2.insertBefore(familiarityBlock, anchor);
+  }
+
+  // Ensure page2 starts hidden (defensive).
+  if (!page2.style.display) {
+    page2.style.display = 'none';
+  }
+}
 
 /**
  * Load texts.json from the configured URL
@@ -170,11 +197,26 @@ function validateSurveyPage1() {
   const education = document.getElementById('education');
   const socialMediaTime = document.getElementById('social-media-time');
 
-  // Use native UI where possible
-  if (gender && !gender.value) return gender.reportValidity();
-  if (age && !age.value) return age.reportValidity();
-  if (education && !education.value) return education.reportValidity();
-  if (socialMediaTime && !socialMediaTime.value) return socialMediaTime.reportValidity();
+  if (gender && !gender.value) {
+    alert('Please select your gender.');
+    gender.focus();
+    return false;
+  }
+  if (age && !age.value) {
+    alert('Please enter your age.');
+    age.focus();
+    return false;
+  }
+  if (education && !education.value) {
+    alert('Please select your education level.');
+    education.focus();
+    return false;
+  }
+  if (socialMediaTime && !socialMediaTime.value) {
+    alert('Please select your daily social media time.');
+    socialMediaTime.focus();
+    return false;
+  }
   return true;
 }
 
@@ -192,6 +234,12 @@ function handleBackPage() {
  */
 async function handleSurveySubmit(event) {
   event.preventDefault();
+
+  // With novalidate enabled, we must validate page-1 fields here as well (in case the user skips UI flow).
+  if (!validateSurveyPage1()) {
+    showSurveyPage(1);
+    return;
+  }
   
   // Collect all form data
   const formData = {
@@ -220,12 +268,14 @@ async function handleSurveySubmit(event) {
     !formData.has_purpose ||
     !formData.purpose_free_text.trim()
   ) {
-    // Try to trigger native required UI for the textarea if it's the missing one.
-    if (!formData.purpose_free_text.trim()) {
-      const el = document.getElementById('purpose-text');
-      if (el && el.reportValidity) el.reportValidity();
-    }
-    alert('Please answer all required questions (including 3.2).');
+    const missing = [];
+    if (!formData.credibility) missing.push('Credibility');
+    if (!formData.willingness_to_share) missing.push('Willingness to Share');
+    if (!formData.has_purpose) missing.push('Has Purpose');
+    if (!formData.purpose_free_text.trim()) missing.push('Purpose (3.2)');
+    if (!formData.topic_familiarity) missing.push('Topic Familiarity');
+
+    alert('Please answer all required questions: ' + missing.join(', ') + '.');
     return;
   }
   
