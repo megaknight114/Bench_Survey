@@ -152,7 +152,7 @@
     </ul>
 
     <h3>Contacts</h3>
-    <p>If you have questions or concerns, contact: <strong> Xingjun Ma, +86-18600019893</strong>.<br>
+    <p>If you have questions or concerns, contact: <strong> Xingjun Ma, +86-18600019893</strong>.</p>
 
     <h3>Consent Statement</h3>
     <p>By selecting "I agree", you confirm that:</p>
@@ -162,7 +162,7 @@
       <li>You agree to participate voluntarily.</li>
     </ul>
 
-    <form id="consent-form">
+    <form id="consent-form" novalidate>
       <div class="checkbox-group">
         <input type="checkbox" id="age-check" required>
         <label for="age-check">I am at least 18 years old.</label>
@@ -179,9 +179,10 @@
   <div id="survey-section" class="section">
     <h2>Survey</h2>
 
-    <form id="survey-form">
-      <!-- Section A: Background Information (Before Reading Text) -->
-      <h3>A. Basic Background Information</h3>
+    <form id="survey-form" novalidate>
+      <!-- Page 1: Background Information (Before Reading Text) -->
+      <div id="survey-page-1">
+        <h3>A. Basic Background Information</h3>
 
       <label for="gender">1. What is your gender?</label>
       <select id="gender" required>
@@ -216,6 +217,11 @@
         <option value="More than 4 hours">More than 4 hours</option>
       </select>
 
+      <button type="button" id="next-btn">Next</button>
+      </div>
+
+      <!-- Page 2: Text + Questions -->
+      <div id="survey-page-2" style="display:none;">
       <!-- Section B: Text Display -->
       <h3>B. Text</h3>
       <p><strong>Please read the following text carefully.</strong><br>
@@ -258,40 +264,42 @@
         <label for="purpose-no">No</label>
       </div>
 
-      <label for="purpose-text">3.2. If yes, what is the purpose? </label>
-      <textarea id="purpose-text" placeholder="Describe the purpose in 1-2 sentences..."></textarea>
+      <label for="purpose-text">3.2. What do you think is the purpose of this text? <strong>(Required)</strong></label>
+      <textarea id="purpose-text" placeholder="Describe the purpose in 1-2 sentences..." required></textarea>
 
+      <div id="topic-familiarity-block">
+        <label id="topic-familiarity-question">4. Overall, how familiar are you with the topic of the text you just read?</label>
+        <div class="radio-group">
+          <input type="radio" id="familiarity-1" name="topic-familiarity" value="1" required>
+          <label for="familiarity-1">1 = Not familiar at all</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="familiarity-2" name="topic-familiarity" value="2">
+          <label for="familiarity-2">2 = Slightly familiar</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="familiarity-3" name="topic-familiarity" value="3">
+          <label for="familiarity-3">3 = Somewhat familiar</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="familiarity-4" name="topic-familiarity" value="4">
+          <label for="familiarity-4">4 = Neutral / Average</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="familiarity-5" name="topic-familiarity" value="5">
+          <label for="familiarity-5">5 = Quite familiar</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="familiarity-6" name="topic-familiarity" value="6">
+          <label for="familiarity-6">6 = Very familiar</label>
+        </div>
+      </div>
+
+      <button type="button" id="back-btn" style="background:#6c7a89;margin-right:10px;">Back</button>
       <button type="submit" id="submit-btn">Submit</button>
+      </div>
     </form>
   </div>
-
-      <label>4. Overall, how familiar are you with the topic of the text you are about to read?</label>
-      <div class="radio-group">
-        <input type="radio" id="familiarity-1" name="topic-familiarity" value="1" required>
-        <label for="familiarity-1">1 = Not familiar at all</label>
-      </div>
-      <div class="radio-group">
-        <input type="radio" id="familiarity-2" name="topic-familiarity" value="2">
-        <label for="familiarity-2">2 = Slightly familiar</label>
-      </div>
-      <div class="radio-group">
-        <input type="radio" id="familiarity-3" name="topic-familiarity" value="3">
-        <label for="familiarity-3">3 = Somewhat familiar</label>
-      </div>
-      <div class="radio-group">
-        <input type="radio" id="familiarity-4" name="topic-familiarity" value="4">
-        <label for="familiarity-4">4 = Neutral / Average</label>
-      </div>
-      <div class="radio-group">
-        <input type="radio" id="familiarity-5" name="topic-familiarity" value="5">
-        <label for="familiarity-5">5 = Quite familiar</label>
-      </div>
-      <div class="radio-group">
-        <input type="radio" id="familiarity-6" name="topic-familiarity" value="6">
-        <label for="familiarity-6">6 = Very familiar</label>
-      </div>
-
-
   <!-- Success Section -->
   <div id="success-section" class="section success">
     <h2>Thank You!</h2>
@@ -299,8 +307,7 @@
     <p><strong>Please do not share or post the text you read</strong>, as it may affect other participants' responses.</p>
   </div>
 
-  <script src="config.js"></script>
-  <script src="app.js"></script>
+  <script src="config.js?v=20251221"></script>
+  <script src="app.js?v=20251221"></script>
 </body>
 </html>
-
