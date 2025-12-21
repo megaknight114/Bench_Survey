@@ -179,18 +179,27 @@
     </ul>
 
     <form id="consent-form" novalidate>
-      <label for="participant-code">Anonymous Participant Code <span class="muted">(required)</span></label>
-      <input
-        type="text"
-        id="participant-code"
-        autocomplete="off"
-        inputmode="text"
-        placeholder="Create a code you can remember (do NOT use your real name/ID)"
-        required
-      />
-      <p class="muted" style="margin-top:-10px;margin-bottom:10px;">
-        This code is self-chosen and should not contain personal identifiers. It is used only to group your submissions if needed.
-      </p>
+  <label for="participant-code">
+    Participant Nickname <span class="muted">(required)</span>
+  </label>
+
+  <input
+    type="text"
+    id="participant-code"
+    autocomplete="off"
+    inputmode="text"
+    placeholder="Choose a nickname (letters and/or numbers)"
+    required
+  />
+
+  <p class="muted" style="margin-top:-10px;margin-bottom:10px;">
+    Please enter a nickname using <strong>letters and/or numbers</strong>.
+    If you participate more than once, use the <strong>same nickname</strong> each time.
+    The nickname does not need to be anonymous, but we recommend not using real-world identifiers.
+    It is used only to distinguish submissions within this study.
+  </p>
+</form>
+
       <div class="checkbox-group">
         <input type="checkbox" id="age-check" required />
         <label for="age-check">I am at least 18 years old.</label>
