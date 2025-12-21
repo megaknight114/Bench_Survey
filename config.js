@@ -3,7 +3,7 @@
 
 // Cache-bust version string.
 // Bump this whenever you update docs/texts.json (or want to invalidate old browser/localStorage caches).
-const TEXTS_VERSION = '2025-12-21-1';
+const TEXTS_VERSION = '2025-12-21-13';
 
 const CONFIG = {
   // Get this URL after deploying your Apps Script as a Web App
