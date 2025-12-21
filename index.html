@@ -105,7 +105,7 @@
 </head>
 
 <body>
-  <h1>Your Impressions of Online Texts</h1>
+  <h1>Text Perception Study: Credibility, Sharing, and Intent</h1>
   <p class="muted">
     <strong>Institution:</strong> Fudan University<br />
     <strong>Principal Investigators:</strong> Zonghuan Xu, Xingjun Ma
@@ -179,6 +179,18 @@
     </ul>
 
     <form id="consent-form" novalidate>
+      <label for="participant-code">Anonymous Participant Code <span class="muted">(required)</span></label>
+      <input
+        type="text"
+        id="participant-code"
+        autocomplete="off"
+        inputmode="text"
+        placeholder="Create a code you can remember (do NOT use your real name/ID)"
+        required
+      />
+      <p class="muted" style="margin-top:-10px;margin-bottom:10px;">
+        This code is self-chosen and should not contain personal identifiers. It is used only to group your submissions if needed.
+      </p>
       <div class="checkbox-group">
         <input type="checkbox" id="age-check" required />
         <label for="age-check">I am at least 18 years old.</label>
