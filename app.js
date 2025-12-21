@@ -1,11 +1,12 @@
 // Survey application logic
 
-let participantId = null;
+let participantCode = '';
 let assignedText = null;
 let textsMap = {}; // text_id -> {text, topic}
 let consentGiven = false;
 
-const TEXTS_VERSION_STORAGE_KEY = 'texts_version';
+const SESSION_ASSIGNED_TEXT_KEY = 'assigned_text';
+const SESSION_PARTICIPANT_CODE_KEY = 'participant_code';
 
 // Prevent the browser from restoring scroll position (can look like "auto-jumping" to page 2).
 if (typeof history !== 'undefined' && 'scrollRestoration' in history) {
@@ -39,35 +40,23 @@ document.addEventListener('DOMContentLoaded', function() {
   // Safety: ensure familiarity block is inside page 2 and placed before the buttons.
   normalizeSurveyDom();
 
-  // Generate or retrieve participant ID
-  participantId = localStorage.getItem('participant_id');
-  if (!participantId) {
-    participantId = crypto.randomUUID();
-    localStorage.setItem('participant_id', participantId);
-  }
-
-  // Cache-bust localStorage assignment if texts.json version changes.
-  // This prevents a stale assigned_text pointing to a text_id that is no longer present.
-  if (CONFIG && CONFIG.TEXTS_VERSION) {
-    const prev = localStorage.getItem(TEXTS_VERSION_STORAGE_KEY);
-    if (prev !== CONFIG.TEXTS_VERSION) {
-      localStorage.setItem(TEXTS_VERSION_STORAGE_KEY, CONFIG.TEXTS_VERSION);
-      localStorage.removeItem('assigned_text');
+  // Restore participant code for convenience within the same tab/session.
+  try {
+    const savedCode = sessionStorage.getItem(SESSION_PARTICIPANT_CODE_KEY);
+    if (savedCode) {
+      participantCode = savedCode;
+      const input = document.getElementById('participant-code');
+      if (input) input.value = savedCode;
     }
-  }
+  } catch (e) {}
 
   // Load texts.json
   loadTexts().then(() => {
-    // Check if we already have an assignment
-    const savedAssignment = localStorage.getItem('assigned_text');
-    if (savedAssignment) {
-      assignedText = JSON.parse(savedAssignment);
-      // Only show survey after consent; otherwise wait for user to consent.
-      if (consentGiven) showSurvey();
-    } else {
-      // Request assignment
-      requestAssignment();
-    }
+    // Optionally restore a pending in-tab assignment (useful if user refreshes mid-survey).
+    try {
+      const savedAssignment = sessionStorage.getItem(SESSION_ASSIGNED_TEXT_KEY);
+      if (savedAssignment) assignedText = JSON.parse(savedAssignment);
+    } catch (e) {}
   }).catch(err => {
     console.error('Error loading texts:', err);
     showError('Failed to load survey texts. Please refresh the page.');
@@ -143,7 +132,9 @@ async function loadTexts() {
  */
 async function requestAssignment() {
   try {
-    const url = `${CONFIG.APPS_SCRIPT_URL}?participant_id=${encodeURIComponent(participantId)}`;
+    const params = new URLSearchParams();
+    if (participantCode) params.set('participant_code', participantCode);
+    const url = `${CONFIG.APPS_SCRIPT_URL}?${params.toString()}`;
     const response = await fetch(url);
     
     if (!response.ok) {
@@ -158,7 +149,7 @@ async function requestAssignment() {
     }
     
     assignedText = data;
-    localStorage.setItem('assigned_text', JSON.stringify(assignedText));
+    try { sessionStorage.setItem(SESSION_ASSIGNED_TEXT_KEY, JSON.stringify(assignedText)); } catch (e) {}
     // Only show survey after consent; avoids race where user clicks consent before assignment returns.
     if (consentGiven) showSurvey();
     
@@ -189,8 +180,8 @@ function showSurvey() {
   showError(
     'Text not found in texts.json for text_id=' +
       assignedText.text_id +
-      '. This usually means your GitHub Pages is still serving an old texts.json, or your browser cached an old assignment. ' +
-      'Try hard refresh (Ctrl+Shift+R) or clear site data/localStorage and reload.'
+      '. This usually means your GitHub Pages is still serving an old texts.json. ' +
+      'Try hard refresh (Ctrl+Shift+R) and reload.'
   );
 }
 
@@ -200,28 +191,49 @@ function showSurvey() {
 function handleConsent(event) {
   event.preventDefault();
   
+  const codeInput = document.getElementById('participant-code');
   const ageCheck = document.getElementById('age-check').checked;
   const consentCheck = document.getElementById('consent-check').checked;
+  const code = codeInput ? String(codeInput.value || '').trim() : '';
+
+  if (!code || code.length < 4) {
+    alert('Please enter an anonymous participant code (at least 4 characters). Do not use your real name/ID.');
+    try { codeInput && codeInput.focus(); } catch (e) {}
+    return;
+  }
   
   if (!ageCheck || !consentCheck) {
     alert('Please confirm that you are at least 18 years old and agree to participate.');
     return;
   }
   
+  participantCode = code;
+  try { sessionStorage.setItem(SESSION_PARTICIPANT_CODE_KEY, participantCode); } catch (e) {}
+
   consentGiven = true;
-  // If assignment is already ready, proceed; otherwise wait for requestAssignment() to complete.
-  if (assignedText) {
+  // Ensure we have an assignment before showing the survey.
+  if (assignedText && assignedText.text_id) {
     showSurvey();
-  } else {
-    alert('Thanks. Please wait a moment while we assign a text, then click OK.');
+    return;
   }
+  alert('Thanks. Please wait a moment while we assign a text, then click OK.');
+  requestAssignment();
 }
 
-// For debugging/testing: clear stored participant/assignment
-function resetParticipant() {
-  localStorage.removeItem('participant_id');
-  localStorage.removeItem('assigned_text');
-  location.reload();
+function resetForNewParticipation() {
+  assignedText = null;
+  try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
+
+  // Reset survey form UI (keep participant code in the input for convenience)
+  try { document.getElementById('survey-form')?.reset(); } catch (e) {}
+  updatePurposeFreeTextVisibility();
+
+  // Move user back to page 1 while we fetch a new text
+  document.getElementById('success-section').style.display = 'none';
+  document.getElementById('survey-section').style.display = 'block';
+  showSurveyPage(1);
+
+  requestAssignment();
 }
 
 function validateSurveyPage1() {
@@ -276,7 +288,8 @@ async function handleSurveySubmit(event) {
   
   // Collect all form data
   const formData = {
-    participant_id: participantId,
+    participant_code: participantCode,
+    allocation_id: assignedText && assignedText.allocation_id ? assignedText.allocation_id : '',
     text_id: assignedText.text_id,
     topic: assignedText.topic,
     gender: document.getElementById('gender').value,
@@ -348,6 +361,10 @@ async function handleSurveySubmit(event) {
     // Show success message
     document.getElementById('survey-section').style.display = 'none';
     document.getElementById('success-section').style.display = 'block';
+
+    // Clear in-tab assignment so the next participation gets a new text
+    assignedText = null;
+    try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
     
   } catch (err) {
     console.error('Submission error:', err);
@@ -376,7 +393,7 @@ document.getElementById('consent-form')?.addEventListener('submit', handleConsen
 document.getElementById('survey-form')?.addEventListener('submit', handleSurveySubmit);
 document.getElementById('next-btn')?.addEventListener('click', handleNextPage);
 document.getElementById('back-btn')?.addEventListener('click', handleBackPage);
-document.getElementById('repeat-btn')?.addEventListener('click', resetParticipant);
+document.getElementById('repeat-btn')?.addEventListener('click', resetForNewParticipation);
 document.getElementById('purpose-yes')?.addEventListener('change', updatePurposeFreeTextVisibility);
 document.getElementById('purpose-no')?.addEventListener('change', updatePurposeFreeTextVisibility);
 updatePurposeFreeTextVisibility();
