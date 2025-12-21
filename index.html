@@ -137,6 +137,7 @@
 
     <h3>Voluntary Participation</h3>
     <p>Your participation is <strong>completely voluntary</strong>. You may refuse to participate or <strong>stop at any time</strong> without penalty or negative consequences.</p>
+    <p>You may stop at any time.</p>
 
     <h3>Benefits</h3>
     <p>There may be no direct personal benefit. Results may help improve research and governance on misinformation risks.</p>
@@ -263,8 +264,10 @@
         <label for="purpose-no">No</label>
       </div>
 
-      <label for="purpose-text">3.2. What do you think is the purpose of this text? <strong>(Required)</strong></label>
-      <textarea id="purpose-text" placeholder="Describe the purpose in 1-2 sentences..." required></textarea>
+      <div id="purpose-free-text-block" style="display:none;">
+        <label for="purpose-text">3.2. What do you think is the purpose of this text? <strong>(Required)</strong></label>
+        <textarea id="purpose-text" placeholder="Describe the purpose in 1-2 sentences..."></textarea>
+      </div>
 
       <div id="topic-familiarity-block">
         <label id="topic-familiarity-question">4. Overall, how familiar are you with the topic of the text you just read?</label>
