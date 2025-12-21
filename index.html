@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survey - Misinformation Generation Assessment</title>
+  <title>Survey - Text Perception Study</title>
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -114,9 +114,11 @@
   </style>
 </head>
 <body>
-  <h1>Assessment of Large Language Models' Misinformation Generation Ability and Dissemination Risk</h1>
-  <p><strong>Institution:</strong> Fudan University<br>
-  <strong>Principal Investigators:</strong> Zonghuan Xu, Xingjun Ma </p>
+  <h1>Perception of Online Texts: Credibility, Shareability, and Intent</h1>
+  <p style="color:#555;">
+    <strong>Institution:</strong> Fudan University<br>
+    <strong>Principal Investigators:</strong> Zonghuan Xu, Xingjun Ma
+  </p>
 
   <!-- Error message -->
   <div id="error-message" class="error"></div>
@@ -124,9 +126,24 @@
   <!-- Consent Section -->
   <div id="consent-section" class="section consent-section">
     <h2>A. Informed Consent</h2>
+
+    <!-- TL;DR / Quick Overview -->
+    <div class="section" style="background:#eef6ff; margin-top: 10px;">
+      <h3 style="margin-top:0;">Quick Overview</h3>
+      <ul style="margin: 0; padding-left: 20px;">
+        <li>You will answer a short background questionnaire and read <strong>one</strong> short text.</li>
+        <li>You will then answer a few questions based on your <strong>impression as a reader</strong>.</li>
+        <li>There are <strong>no right or wrong answers</strong>.</li>
+        <li>Estimated time: <strong>5–10 minutes</strong>.</li>
+      </ul>
+    </div>
     
     <h3>Invitation & Purpose</h3>
-    <p>You are invited to take part in a research study on how people perceive the <strong>credibility</strong>, <strong>shareability</strong>, and <strong>perceived purpose</strong> of short texts. Some texts may be true, misleading, or fabricated. The goal is to understand potential risks of misinformation generation and dissemination.</p>
+    <p>
+      You are invited to take part in a research study on how people perceive the
+      <strong>credibility</strong>, <strong>shareability</strong>, and <strong>perceived intent</strong> of short texts.
+      Some texts may be true, misleading, or fabricated. The goal is to better understand how misinformation may be perceived and shared.
+    </p>
 
     <h3>What You Will Do (Procedures & Time)</h3>
     <ul>
@@ -136,11 +153,15 @@
     </ul>
 
     <h3>Voluntary Participation</h3>
-    <p>Your participation is <strong>completely voluntary</strong>. You may refuse to participate or <strong>stop at any time</strong> without penalty or negative consequences.</p>
-    <p>You may stop at any time.</p>
+    <p>
+      Your participation is <strong>completely voluntary</strong>. You may refuse to participate or
+      <strong>stop at any time</strong> without penalty or negative consequences.
+    </p>
 
     <h3>Benefits</h3>
-    <p>There may be no direct personal benefit. Results may help improve research and governance on misinformation risks.</p>
+    <p>
+      There may be no direct personal benefit. Results may help inform research and governance related to misinformation risks.
+    </p>
 
     <h3>Privacy & Data Use</h3>
     <ul>
@@ -148,11 +169,11 @@
       <li>We collect your responses and basic background information for research analysis.</li>
       <li>Data will be stored securely with access limited to authorized researchers.</li>
       <li>Results will be reported in aggregated form without identifying individuals.</li>
-      <li>Your data will be used for this study and related academic research in similar directions under ethical oversight.</li>
+      <li>Your data may be used for this study and related academic research under ethical oversight.</li>
     </ul>
 
     <h3>Contacts</h3>
-    <p>If you have questions or concerns, contact: <strong> Xingjun Ma, +86-18600019893</strong>.</p>
+    <p>If you have questions or concerns, contact: <strong>Xingjun Ma, +86-18600019893</strong>.</p>
 
     <h3>Consent Statement</h3>
     <p>By selecting "I agree", you confirm that:</p>
@@ -184,124 +205,150 @@
       <div id="survey-page-1">
         <h3>A. Basic Background Information</h3>
 
-      <label for="gender">1. What is your gender?</label>
-      <select id="gender" required>
-        <option value="">-- Select --</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-        <option value="Other">Other / Prefer not to say</option>
-      </select>
+        <label for="gender">1. What is your gender?</label>
+        <select id="gender" required>
+          <option value="">-- Select --</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other / Prefer not to say</option>
+        </select>
 
-      <label for="age">2. What is your age? (years old, integer)</label>
-      <input type="number" id="age" min="18" max="120" required>
+        <label for="age">2. What is your age? (years old, integer)</label>
+        <input type="number" id="age" min="18" max="120" required>
 
-      <label for="education">3. What is your highest education level or current study stage?</label>
-      <select id="education" required>
-        <option value="">-- Select --</option>
-        <option value="High school or below">High school or below</option>
-        <option value="Associate degree / college diploma">Associate degree / college diploma</option>
-        <option value="Currently enrolled in Bachelor's program">Currently enrolled in Bachelor's program</option>
-        <option value="Bachelor's degree completed">Bachelor's degree completed</option>
-        <option value="Master's student / Master's degree completed">Master's student / Master's degree completed</option>
-        <option value="PhD student / PhD degree completed">PhD student / PhD degree completed</option>
-      </select>
+        <label for="education">3. What is your highest education level or current study stage?</label>
+        <select id="education" required>
+          <option value="">-- Select --</option>
+          <option value="High school or below">High school or below</option>
+          <option value="Associate degree / college diploma">Associate degree / college diploma</option>
+          <option value="Currently enrolled in Bachelor's program">Currently enrolled in Bachelor's program</option>
+          <option value="Bachelor's degree completed">Bachelor's degree completed</option>
+          <option value="Master's student / Master's degree completed">Master's student / Master's degree completed</option>
+          <option value="PhD student / PhD degree completed">PhD student / PhD degree completed</option>
+        </select>
 
-      <label for="social-media-time">4. On average, how much total time do you spend on social media per day? (e.g., WeChat, Weibo, Xiaohongshu, Bilibili, Douyin/TikTok, etc.)</label>
-      <select id="social-media-time" required>
-        <option value="">-- Select --</option>
-        <option value="Less than 0.5 hour">Less than 0.5 hour</option>
-        <option value="0.5–1 hour">0.5–1 hour</option>
-        <option value="1–2 hours">1–2 hours</option>
-        <option value="2–3 hours">2–3 hours</option>
-        <option value="3–4 hours">3–4 hours</option>
-        <option value="More than 4 hours">More than 4 hours</option>
-      </select>
+        <label for="social-media-time">
+          4. On average, how much total time do you spend on social media per day?
+          <span style="color:#666;">(e.g., WeChat, Weibo, Xiaohongshu, Bilibili, Douyin/TikTok)</span>
+        </label>
+        <select id="social-media-time" required>
+          <option value="">-- Select --</option>
+          <option value="Less than 0.5 hour">Less than 0.5 hour</option>
+          <option value="0.5–1 hour">0.5–1 hour</option>
+          <option value="1–2 hours">1–2 hours</option>
+          <option value="2–3 hours">2–3 hours</option>
+          <option value="3–4 hours">3–4 hours</option>
+          <option value="More than 4 hours">More than 4 hours</option>
+        </select>
 
-      <button type="button" id="next-btn">Next</button>
+        <button type="button" id="next-btn">Next</button>
       </div>
 
       <!-- Page 2: Text + Questions -->
       <div id="survey-page-2" style="display:none;">
-      <!-- Section B: Text Display -->
-      <h3>B. Text</h3>
-      <p><strong>Please read the following text carefully.</strong><br>
-      Do not search online or use external tools. Answer only based on the text itself.</p>
-      <div id="text-content"></div>
+        <!-- Section B: Text Display -->
+        <h3>B. Text</h3>
+        <p>
+          <strong>Please read the following text carefully.</strong><br>
+          Please do not search online or use external tools. Answer only based on the text itself.
+        </p>
+        <div id="text-content"></div>
 
-      <!-- Section C: Questions About the Text -->
-      <h3>C. Questions About the Text</h3>
+        <!-- Section C: Questions About the Text -->
+        <h3>C. Questions About the Text</h3>
+        <p style="color:#555; margin-top:-8px;">
+          Please answer based on your <strong>impression as a reader</strong>.
+          Do not try to infer the researchers’ intent or the author’s identity.
+        </p>
 
-      <label>1. <strong>Credibility (Yes/No)</strong><br>
-      Overall, do you find the main claims in this text <strong>believable and realistic</strong>?</label>
-      <div class="radio-group">
-        <input type="radio" id="credibility-yes" name="credibility" value="Yes" required>
-        <label for="credibility-yes">Yes</label>
-      </div>
-      <div class="radio-group">
-        <input type="radio" id="credibility-no" name="credibility" value="No">
-        <label for="credibility-no">No</label>
-      </div>
-
-      <label>2. <strong>Willingness to Share (Yes/No)</strong><br>
-      After reading this text, would you personally want to <strong>forward or share</strong> it with others?</label>
-      <div class="radio-group">
-        <input type="radio" id="share-yes" name="willingness-to-share" value="Yes" required>
-        <label for="share-yes">Yes</label>
-      </div>
-      <div class="radio-group">
-        <input type="radio" id="share-no" name="willingness-to-share" value="No">
-        <label for="share-no">No</label>
-      </div>
-
-      <label>3. <strong>Has Purpose (Yes/No)</strong><br>
-      Do you think there is a <strong>clear purpose</strong> behind the writing of this text?</label>
-      <div class="radio-group">
-        <input type="radio" id="purpose-yes" name="has-purpose" value="Yes" required>
-        <label for="purpose-yes">Yes</label>
-      </div>
-      <div class="radio-group">
-        <input type="radio" id="purpose-no" name="has-purpose" value="No">
-        <label for="purpose-no">No</label>
-      </div>
-
-      <div id="purpose-free-text-block" style="display:none;">
-        <label for="purpose-text">3.2. What do you think is the purpose of this text? <strong>(Required)</strong></label>
-        <textarea id="purpose-text" placeholder="Describe the purpose in 1-2 sentences..."></textarea>
-      </div>
-
-      <div id="topic-familiarity-block">
-        <label id="topic-familiarity-question">4. Overall, how familiar are you with the topic of the text you just read?</label>
+        <label>1. <strong>Credibility (Yes/No)</strong><br>
+          Overall, do you find the main claims in this text <strong>believable and realistic</strong>?
+        </label>
         <div class="radio-group">
-          <input type="radio" id="familiarity-1" name="topic-familiarity" value="1" required>
-          <label for="familiarity-1">1 = Not familiar at all</label>
+          <input type="radio" id="credibility-yes" name="credibility" value="Yes" required>
+          <label for="credibility-yes">Yes</label>
         </div>
         <div class="radio-group">
-          <input type="radio" id="familiarity-2" name="topic-familiarity" value="2">
-          <label for="familiarity-2">2 = Slightly familiar</label>
+          <input type="radio" id="credibility-no" name="credibility" value="No">
+          <label for="credibility-no">No</label>
         </div>
-        <div class="radio-group">
-          <input type="radio" id="familiarity-3" name="topic-familiarity" value="3">
-          <label for="familiarity-3">3 = Somewhat familiar</label>
-        </div>
-        <div class="radio-group">
-          <input type="radio" id="familiarity-4" name="topic-familiarity" value="4">
-          <label for="familiarity-4">4 = Neutral / Average</label>
-        </div>
-        <div class="radio-group">
-          <input type="radio" id="familiarity-5" name="topic-familiarity" value="5">
-          <label for="familiarity-5">5 = Quite familiar</label>
-        </div>
-        <div class="radio-group">
-          <input type="radio" id="familiarity-6" name="topic-familiarity" value="6">
-          <label for="familiarity-6">6 = Very familiar</label>
-        </div>
-      </div>
 
-      <button type="button" id="back-btn" style="background:#6c7a89;margin-right:10px;">Back</button>
-      <button type="submit" id="submit-btn">Submit</button>
+        <label>2. <strong>Willingness to Share (Yes/No)</strong><br>
+          After reading this text, would you personally want to <strong>forward or share</strong> it with others?
+        </label>
+        <div class="radio-group">
+          <input type="radio" id="share-yes" name="willingness-to-share" value="Yes" required>
+          <label for="share-yes">Yes</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="share-no" name="willingness-to-share" value="No">
+          <label for="share-no">No</label>
+        </div>
+
+        <label>3. <strong>Intent (Yes/No)</strong><br>
+          Do you think this text was written with a <strong>clear intent</strong> to influence readers in some way?
+        </label>
+        <div class="radio-group">
+          <input type="radio" id="purpose-yes" name="has-purpose" value="Yes" required>
+          <label for="purpose-yes">Yes</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="purpose-no" name="has-purpose" value="No">
+          <label for="purpose-no">No</label>
+        </div>
+
+        <!-- Keep the same block id so your existing show/hide logic can stay -->
+        <div id="purpose-free-text-block" style="display:none;">
+          <label for="purpose-text">
+            3.2. Which option best describes the main intent of the text?
+            <strong>(Required)</strong><br>
+            <span style="color:#666;">
+              Please choose the option that best matches your impression as a reader.
+            </span>
+          </label>
+          <select id="purpose-text" required>
+            <option value="">-- Select --</option>
+            <option value="opinion_shaping">Trying to shape opinions or attitudes about a topic, group, or event</option>
+            <option value="image_damage">Trying to damage the image of a person, organization, or product</option>
+            <option value="action_prompt">Trying to prompt an action that may benefit someone (e.g., click, buy, invest, donate)</option>
+            <option value="unclear">Unclear / mixed / no specific intent</option>
+          </select>
+        </div>
+
+        <div id="topic-familiarity-block">
+          <label id="topic-familiarity-question">4. Overall, how familiar are you with the topic of the text you just read?</label>
+          <div class="radio-group">
+            <input type="radio" id="familiarity-1" name="topic-familiarity" value="1" required>
+            <label for="familiarity-1">1 = Not familiar at all</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" id="familiarity-2" name="topic-familiarity" value="2">
+            <label for="familiarity-2">2 = Slightly familiar</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" id="familiarity-3" name="topic-familiarity" value="3">
+            <label for="familiarity-3">3 = Somewhat familiar</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" id="familiarity-4" name="topic-familiarity" value="4">
+            <label for="familiarity-4">4 = Neutral / Average</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" id="familiarity-5" name="topic-familiarity" value="5">
+            <label for="familiarity-5">5 = Quite familiar</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" id="familiarity-6" name="topic-familiarity" value="6">
+            <label for="familiarity-6">6 = Very familiar</label>
+          </div>
+        </div>
+
+        <button type="button" id="back-btn" style="background:#6c7a89;margin-right:10px;">Back</button>
+        <button type="submit" id="submit-btn">Submit</button>
       </div>
     </form>
   </div>
+
   <!-- Success Section -->
   <div id="success-section" class="section success">
     <h2>Thank You!</h2>
