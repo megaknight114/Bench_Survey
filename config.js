@@ -1,12 +1,17 @@
 // Configuration for the survey
 // Replace YOUR_APPS_SCRIPT_URL with the URL from your deployed Apps Script Web App
 
+// Cache-bust version string.
+// Bump this whenever you update docs/texts.json (or want to invalidate old browser/localStorage caches).
+const TEXTS_VERSION = '2025-12-21-1';
+
 const CONFIG = {
   // Get this URL after deploying your Apps Script as a Web App
   // Format: https://script.google.com/macros/s/AKfycbxxxxx/exec
-  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbx7RaVd5JDUbpk2ByTJCqKWhuQpRn-aT-UIsziE9cUBprSo2KpPYzDIhjZJl14E0jU/exec',
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbzk1D6ZM7pmK6CFUzMjWAz8voxLVER8EtxUR9HrX0Mgeu1_d0P9oVFDSiMsrMNzHt4O/exec',
   
   // Optional: If you host texts.json elsewhere, change this URL
-  TEXTS_JSON_URL: './texts.json'
+  // Add ?v=... to avoid stale GitHub Pages / browser caches.
+  TEXTS_JSON_URL: './texts.json?v=' + encodeURIComponent(TEXTS_VERSION),
+  TEXTS_VERSION
 };
-
