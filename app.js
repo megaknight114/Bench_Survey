@@ -8,6 +8,20 @@ let consentGiven = false;
 const SESSION_ASSIGNED_TEXT_KEY = 'assigned_text';
 const SESSION_PARTICIPANT_CODE_KEY = 'participant_code';
 
+function setConsentSubmitState(isLoading, loadingText) {
+  const btn = document.querySelector('#consent-form button[type="submit"]');
+  if (!btn) return;
+  if (!btn.getAttribute('data-original-text')) {
+    btn.setAttribute('data-original-text', btn.textContent || '');
+  }
+  btn.disabled = !!isLoading;
+  if (isLoading) {
+    btn.textContent = loadingText || 'Loading...';
+  } else {
+    btn.textContent = btn.getAttribute('data-original-text') || 'Continue';
+  }
+}
+
 // Prevent the browser from restoring scroll position (can look like "auto-jumping" to page 2).
 if (typeof history !== 'undefined' && 'scrollRestoration' in history) {
   try { history.scrollRestoration = 'manual'; } catch (e) {}
@@ -131,6 +145,8 @@ async function loadTexts() {
  * Request text assignment from Apps Script
  */
 async function requestAssignment() {
+  // Provide immediate UI feedback (especially on slower networks / in-app browsers).
+  setConsentSubmitState(true, 'Assigning a text...');
   try {
     const params = new URLSearchParams();
     if (participantCode) params.set('participant_code', participantCode);
@@ -156,6 +172,9 @@ async function requestAssignment() {
   } catch (err) {
     console.error('Assignment error:', err);
     showError('Failed to assign text. Please refresh the page.');
+  } finally {
+    // If we transitioned to the survey, the consent section is hidden; but resetting state is harmless.
+    setConsentSubmitState(false);
   }
 }
 
@@ -211,12 +230,19 @@ function handleConsent(event) {
   try { sessionStorage.setItem(SESSION_PARTICIPANT_CODE_KEY, participantCode); } catch (e) {}
 
   consentGiven = true;
+  // Clear old errors (if any)
+  const errorDiv = document.getElementById('error-message');
+  if (errorDiv) {
+    errorDiv.textContent = '';
+    errorDiv.style.display = 'none';
+  }
+
   // Ensure we have an assignment before showing the survey.
   if (assignedText && assignedText.text_id) {
     showSurvey();
     return;
   }
-  alert('Thanks. Please wait a moment while we assign a text, then click OK.');
+  setConsentSubmitState(true, 'Assigning a text...');
   requestAssignment();
 }
 
@@ -387,6 +413,7 @@ function showError(message) {
   if (errorDiv) {
     errorDiv.textContent = message;
     errorDiv.style.display = 'block';
+    try { window.scrollTo(0, 0); } catch (e) {}
   } else {
     alert(message);
   }
