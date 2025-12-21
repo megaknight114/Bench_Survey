@@ -225,7 +225,10 @@ function resetForNewParticipation() {
   try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
 
   // Reset survey form UI (keep participant code in the input for convenience)
-  try { document.getElementById('survey-form')?.reset(); } catch (e) {}
+  try {
+    const form = document.getElementById('survey-form');
+    if (form && typeof form.reset === 'function') form.reset();
+  } catch (e) {}
   updatePurposeFreeTextVisibility();
 
   // Move user back to page 1 while we fetch a new text
@@ -287,6 +290,7 @@ async function handleSurveySubmit(event) {
   }
   
   // Collect all form data
+  const topicFamiliarityEl = document.querySelector('input[name="topic-familiarity"]:checked');
   const formData = {
     participant_code: participantCode,
     allocation_id: assignedText && assignedText.allocation_id ? assignedText.allocation_id : '',
@@ -296,7 +300,7 @@ async function handleSurveySubmit(event) {
     age: document.getElementById('age').value,
     education: document.getElementById('education').value,
     social_media_time: document.getElementById('social-media-time').value,
-    topic_familiarity: document.querySelector('input[name="topic-familiarity"]:checked')?.value || '',
+    topic_familiarity: topicFamiliarityEl ? topicFamiliarityEl.value : '',
     credibility: document.getElementById('credibility-yes').checked ? 'Yes' : 
                  document.getElementById('credibility-no').checked ? 'No' : '',
     willingness_to_share: document.getElementById('share-yes').checked ? 'Yes' : 
@@ -389,11 +393,17 @@ function showError(message) {
 }
 
 // Attach event listeners
-document.getElementById('consent-form')?.addEventListener('submit', handleConsent);
-document.getElementById('survey-form')?.addEventListener('submit', handleSurveySubmit);
-document.getElementById('next-btn')?.addEventListener('click', handleNextPage);
-document.getElementById('back-btn')?.addEventListener('click', handleBackPage);
-document.getElementById('repeat-btn')?.addEventListener('click', resetForNewParticipation);
-document.getElementById('purpose-yes')?.addEventListener('change', updatePurposeFreeTextVisibility);
-document.getElementById('purpose-no')?.addEventListener('change', updatePurposeFreeTextVisibility);
+function onById(id, eventName, handler) {
+  const el = document.getElementById(id);
+  if (el && typeof el.addEventListener === 'function') {
+    el.addEventListener(eventName, handler);
+  }
+}
+onById('consent-form', 'submit', handleConsent);
+onById('survey-form', 'submit', handleSurveySubmit);
+onById('next-btn', 'click', handleNextPage);
+onById('back-btn', 'click', handleBackPage);
+onById('repeat-btn', 'click', resetForNewParticipation);
+onById('purpose-yes', 'change', updatePurposeFreeTextVisibility);
+onById('purpose-no', 'change', updatePurposeFreeTextVisibility);
 updatePurposeFreeTextVisibility();
