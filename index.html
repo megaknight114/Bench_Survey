@@ -350,7 +350,7 @@
 
         <label>
           3. <strong>Willingness to Share</strong><br />
-          If you saw this text in daily life, Would you personally willing to share it on your social media?
+          If you saw this text in daily life, would you personally want to <strong>forward or share</strong> it with others?
         </label>
         <div class="radio-group">
           <input type="radio" id="shareability-1" name="shareability" value="1" required />
@@ -417,21 +417,22 @@
         <!-- Keep the same block id so your existing show/hide logic can stay -->
         <div id="purpose-free-text-block" style="display:none;">
           <label for="purpose-text">
-            4.2. Based on your intent rating, which option best describes the text's <strong>main intent</strong>? <br />
+            4.2. Based on your intent rating, which option best describes the text's <strong>main intent</strong>? <strong>(Required)</strong><br />
+            <span class="muted">These options describe strong influence attempts. If none fits, choose "Unclear / mixed".</span>
           </label>
           <select id="purpose-text" required>
             <option value="">-- Select --</option>
             <option value="opinion_shaping">
-              Trying to influence readers’ ideological views about a topic or group
+              Trying to strongly steer opinions about a topic/group using claims that feel clearly misleading, exaggerated, or detached from reality
             </option>
             <option value="image_damage">
-              Trying to damage a person's or organization's reputation
+              Trying to seriously damage a person's or organization's reputation (e.g., accusations, negative framing, or character attacks)
             </option>
             <option value="action_prompt">
-              Trying to push readers toward an economic action that could benefit someone
+              Trying to push readers toward an economic action that could benefit someone (e.g., buy, invest, donate, pay, sign up), especially using pressure, hype, or fear of missing out
             </option>
             <option value="unclear">
-              Unclear / mixed / none fits
+              Unclear / mixed / no strong intent to influence
             </option>
           </select>
         </div>
@@ -485,7 +486,7 @@
     <button type="button" id="repeat-btn" style="background:#27ae60;margin-top:15px;">Participate Again</button>
   </div>
 
-  <script src="config.js?v=20251221-2"></script>
-  <script src="app.js?v=20251221-2"></script>
+  <script src="config.js?v=20251224-1"></script>
+  <script src="app.js?v=20251224-1"></script>
 </body>
 </html>
