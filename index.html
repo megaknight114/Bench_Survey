@@ -126,7 +126,7 @@
 </head>
 
 <body>
-  <h1>Text Perception Study: Credibility, Sharing, and Intent</h1>
+  <h1>Online Reading Survey</h1>
   <p class="muted">
     <strong>Institution:</strong> Fudan University<br />
     <strong>Principal Investigators:</strong> Zonghuan Xu, Xingjun Ma
@@ -151,9 +151,9 @@
 
     <h3>Invitation & Purpose</h3>
     <p>
-      You are invited to take part in a research study on how people perceive the
-      <strong>credibility</strong>, <strong>shareability</strong>, and <strong>perceived intent</strong> of short texts encountered online.
-      Some texts may be true, misleading, or fabricated. We study everyday reading reactions and how certain texts may be perceived and shared.
+      You will complete a short background questionnaire, read <strong>one</strong> short text (similar to something you might see online),
+      and then answer a few questions about your <strong>first impression</strong>—for example, how believable it feels, whether you would share it,
+      and whether it seems to have a strong intent to influence readers. Some texts may be true, misleading, or fabricated.
     </p>
 
     <h3>How to Answer (Important)</h3>
@@ -163,21 +163,12 @@
       Just respond to what you read.
     </p>
 
-    <h3>Voluntary Participation</h3>
-    <p>
-      Your participation is <strong>completely voluntary</strong>. You may refuse to participate or <strong>stop at any time</strong>
-      without penalty or negative consequences.
-    </p>
-
-    <h3>Risks & Discomfort</h3>
-    <p>
-      Some texts may contain sensitive or controversial claims. You may stop at any time if you feel uncomfortable.
-    </p>
-
-    <h3>Benefits</h3>
-    <p>
-      There may be no direct personal benefit. Results may help inform research and governance related to misinformation risks.
-    </p>
+    <h3>Participation, Risks & Benefits</h3>
+    <ul>
+      <li>Your participation is <strong>completely voluntary</strong>. You may stop at any time without penalty.</li>
+      <li>Some texts may contain sensitive or controversial claims. You may stop at any time if you feel uncomfortable.</li>
+      <li>There may be no direct personal benefit. Results may help inform research related to misinformation risks.</li>
+    </ul>
 
     <h3>Privacy & Data Use</h3>
     <ul>
@@ -191,13 +182,8 @@
     <h3>Contacts</h3>
     <p>If you have questions or concerns, contact: <strong>Xingjun Ma, +86-18600019893</strong>.</p>
 
-    <h3>Consent Statement</h3>
-    <p>By selecting “I agree”, you confirm that:</p>
-    <ul>
-      <li>You are at least 18 years old.</li>
-      <li>You have read and understood the information above.</li>
-      <li>You agree to participate voluntarily.</li>
-    </ul>
+    <h3>Confirmations</h3>
+    <p>Please confirm all of the following before continuing:</p>
 
     <form id="consent-form" novalidate>
       <label for="participant-code">Anonymous Participant Code <span class="muted">(at least 4 characters)</span></label>
@@ -217,8 +203,12 @@
         <label for="age-check">I am at least 18 years old.</label>
       </div>
       <div class="checkbox-group">
-        <input type="checkbox" id="consent-check" required />
-        <label for="consent-check">I agree to participate in this study.</label>
+        <input type="checkbox" id="understood-check" required />
+        <label for="understood-check">I have read and understood the information above.</label>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="voluntary-check" required />
+        <label for="voluntary-check">I agree to participate voluntarily.</label>
       </div>
       <button type="submit">I Agree - Continue to Survey</button>
     </form>
@@ -289,7 +279,6 @@
           <ul style="margin: 8px 0 0 0; padding-left: 20px;">
             <li>Answer based on your impression as a reader.</li>
             <li>Do not try to guess the researchers' intent or who wrote the text.</li>
-            <li><strong>4 = Unsure / Neutral</strong>. Choose the closest option; don't overthink.</li>
           </ul>
         </div>
 
@@ -303,11 +292,11 @@
         </div>
         <div class="radio-group">
           <input type="radio" id="understanding-2" name="understanding" value="2" />
-          <label for="understanding-2">2</label>
+          <label for="understanding-2">2 = Barely</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="understanding-3" name="understanding" value="3" />
-          <label for="understanding-3">3</label>
+          <label for="understanding-3">3 = Some parts</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="understanding-4" name="understanding" value="4" />
@@ -315,11 +304,11 @@
         </div>
         <div class="radio-group">
           <input type="radio" id="understanding-5" name="understanding" value="5" />
-          <label for="understanding-5">5</label>
+          <label for="understanding-5">5 = Mostly</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="understanding-6" name="understanding" value="6" />
-          <label for="understanding-6">6</label>
+          <label for="understanding-6">6 = Very well</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="understanding-7" name="understanding" value="7" />
@@ -336,11 +325,11 @@
         </div>
         <div class="radio-group">
           <input type="radio" id="credibility-2" name="credibility" value="2" />
-          <label for="credibility-2">2</label>
+          <label for="credibility-2">2 = Mostly unbelievable</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="credibility-3" name="credibility" value="3" />
-          <label for="credibility-3">3</label>
+          <label for="credibility-3">3 = Somewhat unbelievable</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="credibility-4" name="credibility" value="4" />
@@ -348,11 +337,11 @@
         </div>
         <div class="radio-group">
           <input type="radio" id="credibility-5" name="credibility" value="5" />
-          <label for="credibility-5">5</label>
+          <label for="credibility-5">5 = Somewhat believable</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="credibility-6" name="credibility" value="6" />
-          <label for="credibility-6">6</label>
+          <label for="credibility-6">6 = Mostly believable</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="credibility-7" name="credibility" value="7" />
@@ -369,11 +358,11 @@
         </div>
         <div class="radio-group">
           <input type="radio" id="shareability-2" name="shareability" value="2" />
-          <label for="shareability-2">2</label>
+          <label for="shareability-2">2 = Unlikely to share</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="shareability-3" name="shareability" value="3" />
-          <label for="shareability-3">3</label>
+          <label for="shareability-3">3 = Slightly unlikely</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="shareability-4" name="shareability" value="4" />
@@ -381,11 +370,11 @@
         </div>
         <div class="radio-group">
           <input type="radio" id="shareability-5" name="shareability" value="5" />
-          <label for="shareability-5">5</label>
+          <label for="shareability-5">5 = Slightly likely</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="shareability-6" name="shareability" value="6" />
-          <label for="shareability-6">6</label>
+          <label for="shareability-6">6 = Likely to share</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="shareability-7" name="shareability" value="7" />
@@ -402,11 +391,11 @@
         </div>
         <div class="radio-group">
           <input type="radio" id="intent-strength-2" name="intent-strength" value="2" />
-          <label for="intent-strength-2">2</label>
+          <label for="intent-strength-2">2 = Very weak intent</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="intent-strength-3" name="intent-strength" value="3" />
-          <label for="intent-strength-3">3</label>
+          <label for="intent-strength-3">3 = Weak intent</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="intent-strength-4" name="intent-strength" value="4" />
@@ -414,11 +403,11 @@
         </div>
         <div class="radio-group">
           <input type="radio" id="intent-strength-5" name="intent-strength" value="5" />
-          <label for="intent-strength-5">5</label>
+          <label for="intent-strength-5">5 = Somewhat strong intent</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="intent-strength-6" name="intent-strength" value="6" />
-          <label for="intent-strength-6">6</label>
+          <label for="intent-strength-6">6 = Strong intent</label>
         </div>
         <div class="radio-group">
           <input type="radio" id="intent-strength-7" name="intent-strength" value="7" />
@@ -458,11 +447,11 @@
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-2" name="topic-familiarity" value="2" />
-            <label for="familiarity-2">2</label>
+          <label for="familiarity-2">2 = Slightly familiar</label>
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-3" name="topic-familiarity" value="3" />
-            <label for="familiarity-3">3</label>
+          <label for="familiarity-3">3 = Somewhat unfamiliar</label>
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-4" name="topic-familiarity" value="4" />
@@ -470,11 +459,11 @@
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-5" name="topic-familiarity" value="5" />
-            <label for="familiarity-5">5</label>
+          <label for="familiarity-5">5 = Somewhat familiar</label>
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-6" name="topic-familiarity" value="6" />
-            <label for="familiarity-6">6</label>
+          <label for="familiarity-6">6 = Quite familiar</label>
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-7" name="topic-familiarity" value="7" />
