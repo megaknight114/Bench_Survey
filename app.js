@@ -348,6 +348,15 @@ function resetForNewParticipation() {
     if (form && typeof form.reset === 'function') form.reset();
   } catch (e) {}
 
+  // Ensure the submit button is usable (it may be left in "Submitting..." state from the previous run)
+  try {
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit';
+    }
+  } catch (e) {}
+
   // Restore background answers
   try {
     const genderEl2 = document.getElementById('gender');
