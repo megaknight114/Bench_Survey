@@ -278,8 +278,12 @@ function handleConsent(event) {
   event.preventDefault();
   
   const codeInput = document.getElementById('participant-code');
-  const ageCheck = document.getElementById('age-check').checked;
-  const consentCheck = document.getElementById('consent-check').checked;
+  const ageCheckEl = document.getElementById('age-check');
+  const understoodCheckEl = document.getElementById('understood-check');
+  const voluntaryCheckEl = document.getElementById('voluntary-check');
+  const ageCheck = !!(ageCheckEl && ageCheckEl.checked);
+  const understoodCheck = !!(understoodCheckEl && understoodCheckEl.checked);
+  const voluntaryCheck = !!(voluntaryCheckEl && voluntaryCheckEl.checked);
   const code = codeInput ? String(codeInput.value || '').trim() : '';
 
   if (!code || code.length < 4) {
@@ -288,8 +292,8 @@ function handleConsent(event) {
     return;
   }
   
-  if (!ageCheck || !consentCheck) {
-    alert('Please confirm that you are at least 18 years old and agree to participate.');
+  if (!ageCheck || !understoodCheck || !voluntaryCheck) {
+    alert('Please confirm all three items (18+, read & understood, and voluntary participation) to continue.');
     return;
   }
   
