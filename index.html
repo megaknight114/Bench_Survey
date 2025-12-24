@@ -75,14 +75,35 @@
     }
     button:hover { background: #2980b9; }
     button:disabled { background: #95a5a6; cursor: not-allowed; }
+    #text-title {
+      background: #fff;
+      padding: 20px 20px 10px 20px;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      margin: 15px 0 0 0;
+      font-size: 24px;
+      font-weight: 600;
+      color: #2c3e50;
+      line-height: 1.4;
+      display: none;
+    }
     #text-content {
       background: #fff;
       padding: 20px;
       border: 1px solid #ddd;
       border-radius: 4px;
-      margin: 15px 0;
+      margin: 0 0 15px 0;
       white-space: pre-wrap;
       line-height: 1.8;
+    }
+    #text-title.has-title {
+      display: block;
+    }
+    #text-content.has-title {
+      border-radius: 0 0 4px 4px;
+      border-top: none;
+      margin-top: 0;
     }
     .error {
       color: #e74c3c;
@@ -256,9 +277,10 @@
         <h3>B. Text</h3>
         <p>
           Imagine you come across the following text during everyday online reading (e.g., social media or a group chat).<br />
-          Please read it <strong>naturally</strong> (no need to read “extra carefully”), then answer based on your <strong>first impression</strong>.<br />
+          Please read it <strong>naturally</strong> (no need to read "extra carefully"), then answer based on your <strong>first impression</strong>.<br />
           <span class="muted">Please do not look it up online; answer only based on what is shown here.</span>
         </p>
+        <div id="text-title"></div>
         <div id="text-content"></div>
 
         <h3>C. Questions About the Text</h3>
@@ -266,55 +288,148 @@
           <strong>How to answer:</strong>
           <ul style="margin: 8px 0 0 0; padding-left: 20px;">
             <li>Answer based on your impression as a reader.</li>
-            <li>Do not try to guess the researchers’ intent or who wrote the text.</li>
-            <li>If you are unsure, choose the option that feels closest—don’t overthink.</li>
+            <li>Do not try to guess the researchers' intent or who wrote the text.</li>
+            <li><strong>4 = Unsure / Neutral</strong>. Choose the closest option; don't overthink.</li>
           </ul>
         </div>
 
         <label>
-          1. <strong>Credibility (Yes/No)</strong><br />
+          1. <strong>Understanding</strong><br />
+          Overall, how well did you understand the text you just read?
+        </label>
+        <div class="radio-group">
+          <input type="radio" id="understanding-1" name="understanding" value="1" required />
+          <label for="understanding-1">1 = Not at all</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="understanding-2" name="understanding" value="2" />
+          <label for="understanding-2">2</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="understanding-3" name="understanding" value="3" />
+          <label for="understanding-3">3</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="understanding-4" name="understanding" value="4" />
+          <label for="understanding-4">4 = Unsure / Neutral</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="understanding-5" name="understanding" value="5" />
+          <label for="understanding-5">5</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="understanding-6" name="understanding" value="6" />
+          <label for="understanding-6">6</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="understanding-7" name="understanding" value="7" />
+          <label for="understanding-7">7 = Completely</label>
+        </div>
+
+        <label>
+          2. <strong>Credibility</strong><br />
           Overall, do the main claims in this text feel <strong>believable and realistic</strong>?
         </label>
         <div class="radio-group">
-          <input type="radio" id="credibility-yes" name="credibility" value="Yes" required />
-          <label for="credibility-yes">Yes</label>
+          <input type="radio" id="credibility-1" name="credibility" value="1" required />
+          <label for="credibility-1">1 = Not at all believable</label>
         </div>
         <div class="radio-group">
-          <input type="radio" id="credibility-no" name="credibility" value="No" />
-          <label for="credibility-no">No</label>
+          <input type="radio" id="credibility-2" name="credibility" value="2" />
+          <label for="credibility-2">2</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="credibility-3" name="credibility" value="3" />
+          <label for="credibility-3">3</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="credibility-4" name="credibility" value="4" />
+          <label for="credibility-4">4 = Unsure / Neutral</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="credibility-5" name="credibility" value="5" />
+          <label for="credibility-5">5</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="credibility-6" name="credibility" value="6" />
+          <label for="credibility-6">6</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="credibility-7" name="credibility" value="7" />
+          <label for="credibility-7">7 = Very believable</label>
         </div>
 
         <label>
-          2. <strong>Willingness to Share (Yes/No)</strong><br />
+          3. <strong>Willingness to Share</strong><br />
           If you saw this text in daily life, would you personally want to <strong>forward or share</strong> it with others?
         </label>
         <div class="radio-group">
-          <input type="radio" id="share-yes" name="willingness-to-share" value="Yes" required />
-          <label for="share-yes">Yes</label>
+          <input type="radio" id="shareability-1" name="shareability" value="1" required />
+          <label for="shareability-1">1 = Not at all willing</label>
         </div>
         <div class="radio-group">
-          <input type="radio" id="share-no" name="willingness-to-share" value="No" />
-          <label for="share-no">No</label>
+          <input type="radio" id="shareability-2" name="shareability" value="2" />
+          <label for="shareability-2">2</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="shareability-3" name="shareability" value="3" />
+          <label for="shareability-3">3</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="shareability-4" name="shareability" value="4" />
+          <label for="shareability-4">4 = Unsure / Neutral</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="shareability-5" name="shareability" value="5" />
+          <label for="shareability-5">5</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="shareability-6" name="shareability" value="6" />
+          <label for="shareability-6">6</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="shareability-7" name="shareability" value="7" />
+          <label for="shareability-7">7 = Very willing</label>
         </div>
 
         <label>
-          3. <strong>Strong Intent to Influence (Yes/No)</strong><br />
+          4. <strong>Intent Strength</strong><br />
           Do you think this text has a <strong>strong intent</strong> to influence readers (beyond simply sharing information)?
         </label>
         <div class="radio-group">
-          <input type="radio" id="purpose-yes" name="has-purpose" value="Yes" required />
-          <label for="purpose-yes">Yes</label>
+          <input type="radio" id="intent-strength-1" name="intent-strength" value="1" required />
+          <label for="intent-strength-1">1 = No intent at all</label>
         </div>
         <div class="radio-group">
-          <input type="radio" id="purpose-no" name="has-purpose" value="No" />
-          <label for="purpose-no">No</label>
+          <input type="radio" id="intent-strength-2" name="intent-strength" value="2" />
+          <label for="intent-strength-2">2</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="intent-strength-3" name="intent-strength" value="3" />
+          <label for="intent-strength-3">3</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="intent-strength-4" name="intent-strength" value="4" />
+          <label for="intent-strength-4">4 = Unsure / Neutral</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="intent-strength-5" name="intent-strength" value="5" />
+          <label for="intent-strength-5">5</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="intent-strength-6" name="intent-strength" value="6" />
+          <label for="intent-strength-6">6</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="intent-strength-7" name="intent-strength" value="7" />
+          <label for="intent-strength-7">7 = Very strong intent</label>
         </div>
 
         <!-- Keep the same block id so your existing show/hide logic can stay -->
         <div id="purpose-free-text-block" style="display:none;">
           <label for="purpose-text">
-            3.2. If you answered “Yes”, which option best describes the text’s <strong>main intent</strong>? <strong>(Required)</strong><br />
-            <span class="muted">These options describe strong influence attempts. If none fits, choose “Unclear / mixed”.</span>
+            4.2. If you rated intent strength as 5 or higher, which option best describes the text's <strong>main intent</strong>? <strong>(Required)</strong><br />
+            <span class="muted">These options describe strong influence attempts. If none fits, choose "Unclear / mixed".</span>
           </label>
           <select id="purpose-text" required>
             <option value="">-- Select --</option>
@@ -322,7 +437,7 @@
               Trying to strongly steer opinions about a topic/group using claims that feel clearly misleading, exaggerated, or detached from reality
             </option>
             <option value="image_damage">
-              Trying to seriously damage a person’s or organization’s reputation (e.g., accusations, negative framing, or character attacks)
+              Trying to seriously damage a person's or organization's reputation (e.g., accusations, negative framing, or character attacks)
             </option>
             <option value="action_prompt">
               Trying to push readers toward an economic action that could benefit someone (e.g., buy, invest, donate, pay, sign up), especially using pressure, hype, or fear of missing out
@@ -335,7 +450,7 @@
 
         <div id="topic-familiarity-block">
           <label id="topic-familiarity-question">
-            4. Overall, how familiar are you with the topic of the text you just read?
+            5. Overall, how familiar are you with the topic of the text you just read?
           </label>
           <div class="radio-group">
             <input type="radio" id="familiarity-1" name="topic-familiarity" value="1" required />
@@ -343,23 +458,27 @@
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-2" name="topic-familiarity" value="2" />
-            <label for="familiarity-2">2 = Slightly familiar</label>
+            <label for="familiarity-2">2</label>
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-3" name="topic-familiarity" value="3" />
-            <label for="familiarity-3">3 = Somewhat familiar</label>
+            <label for="familiarity-3">3</label>
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-4" name="topic-familiarity" value="4" />
-            <label for="familiarity-4">4 = Neutral / Average</label>
+            <label for="familiarity-4">4 = Unsure / Neutral</label>
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-5" name="topic-familiarity" value="5" />
-            <label for="familiarity-5">5 = Quite familiar</label>
+            <label for="familiarity-5">5</label>
           </div>
           <div class="radio-group">
             <input type="radio" id="familiarity-6" name="topic-familiarity" value="6" />
-            <label for="familiarity-6">6 = Very familiar</label>
+            <label for="familiarity-6">6</label>
+          </div>
+          <div class="radio-group">
+            <input type="radio" id="familiarity-7" name="topic-familiarity" value="7" />
+            <label for="familiarity-7">7 = Very familiar</label>
           </div>
         </div>
 
@@ -377,7 +496,7 @@
     <button type="button" id="repeat-btn" style="background:#27ae60;margin-top:15px;">Participate Again</button>
   </div>
 
-  <script src="config.js?v=20251221-1"></script>
-  <script src="app.js?v=20251221-1"></script>
+  <script src="config.js?v=20251221-2"></script>
+  <script src="app.js?v=20251221-2"></script>
 </body>
 </html>
