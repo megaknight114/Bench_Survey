@@ -3,12 +3,12 @@
 
 // Cache-bust version string.
 // Bump this whenever you update docs/texts.json (or want to invalidate old browser/localStorage caches).
-const TEXTS_VERSION = '2025-12-21-14-17';
+const TEXTS_VERSION = '2025-12-24-14-17';
 
 const CONFIG = {
   // Get this URL after deploying your Apps Script as a Web App
   // Format: https://script.google.com/macros/s/AKfycbxxxxx/exec
-  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbx0UfHjLkMGtK9XzFF_M8_aISRnJA8UwQCUclqEaDuEr8rzQINOhuJ00dbAam2ooyQB/exec',
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyaScYPRwm_7hhi9LEHTvLYhrly9WXXa08aMmBtpApgXgXsHpMcHvbmcGhJAKSIqKUd/exec',
   
   // Optional: If you host texts.json elsewhere, change this URL
   // Add ?v=... to avoid stale GitHub Pages / browser caches.
