@@ -110,7 +110,7 @@ function updatePurposeFreeTextVisibility() {
   if (!block || !textarea) return;
 
   const intentStrength = intentStrengthEl ? parseInt(intentStrengthEl.value, 10) : 0;
-  const shouldShow = intentStrength >= 5;
+  const shouldShow = intentStrength >= 1;
 
   block.style.display = shouldShow ? 'block' : 'none';
   textarea.required = shouldShow;
@@ -412,7 +412,7 @@ async function handleSurveySubmit(event) {
   
   // Validate required fields
   const intentStrength = intentStrengthEl ? parseInt(intentStrengthEl.value, 10) : 0;
-  const purposeRequired = intentStrength >= 5;
+  const purposeRequired = intentStrength >= 1;
   
   if (
     !formData.topic_familiarity ||
