@@ -4,6 +4,7 @@ let participantCode = '';
 let assignedText = null;
 let textsMap = {}; // text_id -> {text, topic}
 let consentGiven = false;
+let startFromTextPage = false;
 
 const SESSION_ASSIGNED_TEXT_KEY = 'assigned_text';
 const SESSION_PARTICIPANT_CODE_KEY = 'participant_code';
@@ -231,7 +232,9 @@ function showSurvey() {
   // Hide consent, show survey
   document.getElementById('consent-section').style.display = 'none';
   document.getElementById('survey-section').style.display = 'block';
-  showSurveyPage(1);
+  const initialPage = startFromTextPage ? 2 : 1;
+  startFromTextPage = false;
+  showSurveyPage(initialPage);
   
   // Display the assigned text
   if (!assignedText || !assignedText.text_id) {
@@ -321,17 +324,64 @@ function resetForNewParticipation() {
   assignedText = null;
   try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
 
+  // Preserve page-1 background answers so "Participate Again" can start from the text page.
+  const bg = {
+    gender: '',
+    age: '',
+    education: '',
+    socialMediaTime: ''
+  };
+  try {
+    const genderEl = document.getElementById('gender');
+    const ageEl = document.getElementById('age');
+    const educationEl = document.getElementById('education');
+    const smtEl = document.getElementById('social-media-time');
+    bg.gender = genderEl ? String(genderEl.value || '') : '';
+    bg.age = ageEl ? String(ageEl.value || '') : '';
+    bg.education = educationEl ? String(educationEl.value || '') : '';
+    bg.socialMediaTime = smtEl ? String(smtEl.value || '') : '';
+  } catch (e) {}
+
   // Reset survey form UI (keep participant code in the input for convenience)
   try {
     const form = document.getElementById('survey-form');
     if (form && typeof form.reset === 'function') form.reset();
   } catch (e) {}
+
+  // Restore background answers
+  try {
+    const genderEl2 = document.getElementById('gender');
+    const ageEl2 = document.getElementById('age');
+    const educationEl2 = document.getElementById('education');
+    const smtEl2 = document.getElementById('social-media-time');
+    if (genderEl2) genderEl2.value = bg.gender;
+    if (ageEl2) ageEl2.value = bg.age;
+    if (educationEl2) educationEl2.value = bg.education;
+    if (smtEl2) smtEl2.value = bg.socialMediaTime;
+  } catch (e) {}
+
   updatePurposeFreeTextVisibility();
 
-  // Move user back to page 1 while we fetch a new text
+  // Move user to the text page while we fetch a new text
   document.getElementById('success-section').style.display = 'none';
   document.getElementById('survey-section').style.display = 'block';
-  showSurveyPage(1);
+  startFromTextPage = true;
+  showSurveyPage(2);
+
+  // Show a lightweight loading hint in the text area
+  try {
+    const titleEl = document.getElementById('text-title');
+    const contentEl = document.getElementById('text-content');
+    if (titleEl) {
+      titleEl.textContent = '';
+      titleEl.style.display = 'none';
+      titleEl.classList.remove('has-title');
+    }
+    if (contentEl) {
+      contentEl.classList.remove('has-title');
+      contentEl.textContent = 'Loading...';
+    }
+  } catch (e) {}
 
   requestAssignment();
 }
