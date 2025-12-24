@@ -37,6 +37,8 @@ function showSurveyPage(page) {
   } else {
     page1.style.display = 'none';
     page2.style.display = 'block';
+    // Update purpose dropdown visibility when showing page 2
+    updatePurposeFreeTextVisibility();
   }
 
   // Force scroll-to-top after layout/scroll restoration; avoids the "flash then jump" effect.
@@ -102,14 +104,13 @@ function normalizeSurveyDom() {
 }
 
 function updatePurposeFreeTextVisibility() {
-  const yes = document.getElementById('purpose-yes');
-  const no = document.getElementById('purpose-no');
+  const intentStrengthEl = document.querySelector('input[name="intent-strength"]:checked');
   const block = document.getElementById('purpose-free-text-block');
   const textarea = document.getElementById('purpose-text');
-  if (!yes || !no || !block || !textarea) return;
+  if (!block || !textarea) return;
 
-  const hasPurpose = yes.checked ? 'Yes' : no.checked ? 'No' : '';
-  const shouldShow = hasPurpose === 'Yes';
+  const intentStrength = intentStrengthEl ? parseInt(intentStrengthEl.value, 10) : 0;
+  const shouldShow = intentStrength >= 5;
 
   block.style.display = shouldShow ? 'block' : 'none';
   textarea.required = shouldShow;
@@ -179,6 +180,51 @@ async function requestAssignment() {
 }
 
 /**
+ * Parse text to extract headline and body
+ * @param {string} text - The raw text that may contain "headline:" and "text:" markers
+ * @returns {Object} - { title: string|null, body: string }
+ */
+function parseTextWithTitle(text) {
+  if (!text || typeof text !== 'string') {
+    return { title: null, body: text || '' };
+  }
+
+  // Try to match the pattern: headline: [title]\n\ntext: [body]
+  // First, check if both headline and text markers exist
+  const hasHeadline = /^headline:\s*/i.test(text);
+  const hasTextMarker = /\n\ntext:\s*/i.test(text) || /^text:\s*/i.test(text);
+
+  if (hasHeadline && hasTextMarker) {
+    // Extract headline (everything after "headline:" until "\n\ntext:")
+    const headlineMatch = text.match(/^headline:\s*(.+?)(?:\n\ntext:|$)/is);
+    // Extract text body (everything after "text:")
+    const textMatch = text.match(/(?:^headline:.*?\n\ntext:|^text:)\s*(.+)$/is);
+    
+    if (headlineMatch && textMatch) {
+      return {
+        title: headlineMatch[1].trim(),
+        body: textMatch[1].trim()
+      };
+    }
+  } else if (hasTextMarker) {
+    // Only text marker found (no headline)
+    const textMatch = text.match(/^text:\s*(.+)$/is);
+    if (textMatch) {
+      return {
+        title: null,
+        body: textMatch[1].trim()
+      };
+    }
+  }
+  
+  // No pattern matches, return original text as body
+  return {
+    title: null,
+    body: text.trim()
+  };
+}
+
+/**
  * Show the survey form (after consent)
  */
 function showSurvey() {
@@ -193,7 +239,28 @@ function showSurvey() {
     return;
   }
   if (textsMap[assignedText.text_id] && textsMap[assignedText.text_id].text) {
-    document.getElementById('text-content').textContent = textsMap[assignedText.text_id].text;
+    const rawText = textsMap[assignedText.text_id].text;
+    const parsed = parseTextWithTitle(rawText);
+    
+    // Display title if it exists
+    const titleEl = document.getElementById('text-title');
+    const contentEl = document.getElementById('text-content');
+    
+    if (titleEl && contentEl) {
+      if (parsed.title) {
+        titleEl.textContent = parsed.title;
+        titleEl.style.display = 'block';
+        titleEl.classList.add('has-title');
+        contentEl.classList.add('has-title');
+      } else {
+        titleEl.style.display = 'none';
+        titleEl.classList.remove('has-title');
+        contentEl.classList.remove('has-title');
+      }
+      
+      // Display body
+      contentEl.textContent = parsed.body;
+    }
     return;
   }
   showError(
@@ -317,6 +384,11 @@ async function handleSurveySubmit(event) {
   
   // Collect all form data
   const topicFamiliarityEl = document.querySelector('input[name="topic-familiarity"]:checked');
+  const understandingEl = document.querySelector('input[name="understanding"]:checked');
+  const credibilityEl = document.querySelector('input[name="credibility"]:checked');
+  const shareabilityEl = document.querySelector('input[name="shareability"]:checked');
+  const intentStrengthEl = document.querySelector('input[name="intent-strength"]:checked');
+  
   const formData = {
     participant_code: participantCode,
     allocation_id: assignedText && assignedText.allocation_id ? assignedText.allocation_id : '',
@@ -327,29 +399,31 @@ async function handleSurveySubmit(event) {
     education: document.getElementById('education').value,
     social_media_time: document.getElementById('social-media-time').value,
     topic_familiarity: topicFamiliarityEl ? topicFamiliarityEl.value : '',
-    credibility: document.getElementById('credibility-yes').checked ? 'Yes' : 
-                 document.getElementById('credibility-no').checked ? 'No' : '',
-    willingness_to_share: document.getElementById('share-yes').checked ? 'Yes' : 
-                         document.getElementById('share-no').checked ? 'No' : '',
-    has_purpose: document.getElementById('purpose-yes').checked ? 'Yes' : 
-                 document.getElementById('purpose-no').checked ? 'No' : '',
+    understanding_7: understandingEl ? understandingEl.value : '',
+    credibility_7: credibilityEl ? credibilityEl.value : '',
+    shareability_7: shareabilityEl ? shareabilityEl.value : '',
+    intent_strength_7: intentStrengthEl ? intentStrengthEl.value : '',
     purpose_free_text: document.getElementById('purpose-text').value || ''
   };
   
   // Validate required fields
-  const purposeRequired = formData.has_purpose === 'Yes';
+  const intentStrength = intentStrengthEl ? parseInt(intentStrengthEl.value, 10) : 0;
+  const purposeRequired = intentStrength >= 5;
+  
   if (
     !formData.topic_familiarity ||
-    !formData.credibility ||
-    !formData.willingness_to_share ||
-    !formData.has_purpose ||
+    !formData.understanding_7 ||
+    !formData.credibility_7 ||
+    !formData.shareability_7 ||
+    !formData.intent_strength_7 ||
     (purposeRequired && !formData.purpose_free_text.trim())
   ) {
     const missing = [];
-    if (!formData.credibility) missing.push('Credibility');
-    if (!formData.willingness_to_share) missing.push('Willingness to Share');
-    if (!formData.has_purpose) missing.push('Has Purpose');
-    if (purposeRequired && !formData.purpose_free_text.trim()) missing.push('Purpose (3.2)');
+    if (!formData.understanding_7) missing.push('Understanding');
+    if (!formData.credibility_7) missing.push('Credibility');
+    if (!formData.shareability_7) missing.push('Willingness to Share');
+    if (!formData.intent_strength_7) missing.push('Intent Strength');
+    if (purposeRequired && !formData.purpose_free_text.trim()) missing.push('Purpose (4.2)');
     if (!formData.topic_familiarity) missing.push('Topic Familiarity');
 
     alert('Please answer all required questions: ' + missing.join(', ') + '.');
@@ -431,6 +505,12 @@ onById('survey-form', 'submit', handleSurveySubmit);
 onById('next-btn', 'click', handleNextPage);
 onById('back-btn', 'click', handleBackPage);
 onById('repeat-btn', 'click', resetForNewParticipation);
-onById('purpose-yes', 'change', updatePurposeFreeTextVisibility);
-onById('purpose-no', 'change', updatePurposeFreeTextVisibility);
+
+// Attach listeners to all intent-strength radio buttons for purpose gating
+// Use event delegation on the form since radios might not exist at load time
+document.addEventListener('change', function(e) {
+  if (e.target && e.target.name === 'intent-strength') {
+    updatePurposeFreeTextVisibility();
+  }
+});
 updatePurposeFreeTextVisibility();
