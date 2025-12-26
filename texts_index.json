@@ -1,482 +1,194 @@
 [
   {
-    "text_id": "baseline_qwen-plus_001",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_001",
-    "topic": "healthcare"
-  },
-  {
     "text_id": "baseline_qwen3-32b_001",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_001",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_002",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_002",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen-plus_002",
-    "topic": "technology"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_002",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_003",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen-plus_003",
-    "topic": "technology"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_003",
-    "topic": "healthcare"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_004",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_004",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_005",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_006",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_003",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_004",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen-plus_004",
-    "topic": "finance"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_005",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_007",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_008",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen-plus_005",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_005",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_009",
-    "topic": "technology"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_006",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen-plus_006",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_006",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_007",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_008",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_010",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen-plus_007",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_011",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen-plus_008",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_009",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_010",
-    "topic": "politics"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_007",
-    "topic": "finance"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_008",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_011",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_012",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_012",
-    "topic": "finance"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_009",
-    "topic": "politics"
+    "topic": "Current Affairs"
   },
   {
     "text_id": "baseline_qwen3-32b_010",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_013",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_013",
-    "topic": "environment"
+    "topic": "Current Affairs"
   },
   {
     "text_id": "baseline_qwen3-32b_011",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen-plus_009",
-    "topic": "politics"
+    "topic": "Current Affairs"
   },
   {
     "text_id": "baseline_qwen3-32b_012",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_014",
-    "topic": "politics"
+    "topic": "Current Affairs"
   },
   {
     "text_id": "baseline_qwen3-32b_013",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_015",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_016",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_014",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_017",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_015",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_016",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen-plus_010",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_017",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_018",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_019",
-    "topic": "technology"
+    "topic": "Current Affairs"
   },
   {
     "text_id": "baseline_qwen3-32b_014",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_018",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen-plus_011",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_019",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_020",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen-plus_012",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_021",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_022",
-    "topic": "environment"
+    "topic": "Current Affairs"
   },
   {
     "text_id": "baseline_qwen3-32b_015",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_023",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen-plus_013",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen-plus_014",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_020",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen-plus_015",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_021",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_022",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen-plus_016",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_024",
-    "topic": "technology"
+    "topic": "Current Affairs"
   },
   {
     "text_id": "baseline_qwen3-32b_016",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_023",
-    "topic": "environment"
+    "topic": "Current Affairs"
   },
   {
     "text_id": "baseline_qwen3-32b_017",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen-plus_017",
-    "topic": "healthcare"
+    "topic": "Tech, Business & Finance"
   },
   {
     "text_id": "baseline_qwen3-32b_018",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_024",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_025",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_026",
-    "topic": "technology"
+    "topic": "Tech, Business & Finance"
   },
   {
     "text_id": "baseline_qwen3-32b_019",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen-plus_018",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen-plus_019",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen-plus_020",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen-plus_021",
-    "topic": "technology"
+    "topic": "Tech, Business & Finance"
   },
   {
     "text_id": "baseline_qwen3-32b_020",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen-plus_022",
-    "topic": "finance"
+    "topic": "Tech, Business & Finance"
   },
   {
     "text_id": "baseline_qwen3-32b_021",
-    "topic": "environment"
+    "topic": "Tech, Business & Finance"
   },
   {
     "text_id": "baseline_qwen3-32b_022",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen-plus_023",
-    "topic": "technology"
+    "topic": "Tech, Business & Finance"
   },
   {
     "text_id": "baseline_qwen3-32b_023",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_025",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_qwen-plus_024",
-    "topic": "environment"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_027",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen-plus_025",
-    "topic": "politics"
+    "topic": "Tech, Business & Finance"
   },
   {
     "text_id": "baseline_qwen3-32b_024",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_026",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_qwen-plus_026",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_028",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_027",
-    "topic": "technology"
+    "topic": "Tech, Business & Finance"
   },
   {
     "text_id": "baseline_qwen3-32b_025",
-    "topic": "environment"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_026",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen-plus_027",
-    "topic": "finance"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_027",
-    "topic": "technology"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_028",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen-plus_028",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_029",
-    "topic": "healthcare"
-  },
-  {
-    "text_id": "baseline_qwen-plus_029",
-    "topic": "politics"
-  },
-  {
-    "text_id": "baseline_gemini-3-pro-preview_030",
-    "topic": "politics"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_028",
-    "topic": "politics"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_029",
-    "topic": "finance"
-  },
-  {
-    "text_id": "baseline_qwen3-0.6b_029",
-    "topic": "technology"
+    "topic": "Celebrity News"
   },
   {
     "text_id": "baseline_qwen3-32b_030",
-    "topic": "technology"
+    "topic": "Celebrity News"
   },
   {
-    "text_id": "baseline_qwen3-0.6b_030",
-    "topic": "healthcare"
+    "text_id": "baseline_qwen3-32b_031",
+    "topic": "Celebrity News"
   },
   {
-    "text_id": "baseline_qwen-plus_030",
-    "topic": "environment"
+    "text_id": "baseline_qwen3-32b_032",
+    "topic": "Celebrity News"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_033",
+    "topic": "Current Affairs"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_034",
+    "topic": "Current Affairs"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_035",
+    "topic": "Current Affairs"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_036",
+    "topic": "Current Affairs"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_037",
+    "topic": "Current Affairs"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_038",
+    "topic": "Current Affairs"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_039",
+    "topic": "Current Affairs"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_040",
+    "topic": "Current Affairs"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_041",
+    "topic": "Tech, Business & Finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_042",
+    "topic": "Tech, Business & Finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_043",
+    "topic": "Tech, Business & Finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_044",
+    "topic": "Tech, Business & Finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_045",
+    "topic": "Tech, Business & Finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_046",
+    "topic": "Tech, Business & Finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_047",
+    "topic": "Tech, Business & Finance"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_048",
+    "topic": "Tech, Business & Finance"
   }
 ]
