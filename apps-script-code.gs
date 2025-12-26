@@ -4,7 +4,7 @@
  * SETUP INSTRUCTIONS:
  * 1. Create a Google Sheet with two tabs: "responses" and "assignments"
  * 2. In "responses" tab, add header row:
- *    timestamp, allocation_id, participant_code, text_id, topic, gender, age, education, social_media_time, topic_familiarity, understanding, credibility, willingness_to_share, intent_strength, purpose
+ *    timestamp, allocation_id, participant_code, text_id, topic, gender, age, education, social_media_time, topic_familiarity, understanding, credibility, willingness_to_share, has_purpose, purpose_free_text
  * 3. In "assignments" tab, add header row:
  *    assigned_at, allocation_id, participant_code, text_id, topic, status, submitted_at
  * 4. Replace YOUR_SHEET_ID below with your Sheet ID (from the URL)
@@ -40,9 +40,8 @@ const ASSIGNMENTS_REQUIRED_HEADERS = [
   'submitted_at'
 ];
 
-// Keep the response schema minimal & stable (avoid duplicated/unused columns).
-// NOTE: If your existing Google Sheet already has extra columns, this script will not delete them;
-// it will simply stop writing to those redundant columns going forward.
+// Response schema (Scheme A): keep ONE canonical set of columns to avoid duplicates.
+// We still accept both old and new payload keys, but we only write to this schema.
 const RESPONSES_REQUIRED_HEADERS = [
   'timestamp',
   'allocation_id',
@@ -54,11 +53,12 @@ const RESPONSES_REQUIRED_HEADERS = [
   'education',
   'social_media_time',
   'topic_familiarity',
+  // Canonical
   'understanding',
   'credibility',
   'willingness_to_share',
-  'intent_strength',
-  'purpose'
+  'has_purpose',
+  'purpose_free_text',
 ];
 
 /**
@@ -187,6 +187,15 @@ function doPost(e) {
     const assignmentHeader = ensureHeaders_(assignmentsSheet, ASSIGNMENTS_REQUIRED_HEADERS);
 
     // 1) Append response row first (submission is considered "successful" if this works).
+    // Accept both old and new payload keys, but write ONLY to the canonical schema.
+    // - intent_strength is stored in has_purpose
+    // - purpose is stored in purpose_free_text
+    const understanding = data.understanding || data.understanding_7 || '';
+    const credibility = data.credibility || data.credibility_7 || '';
+    const willingness = data.willingness_to_share || data.shareability_7 || '';
+    const intentStrength = data.intent_strength || data.intent_strength_7 || data.has_purpose || '';
+    const purpose = data.purpose || data.purpose_free_text || '';
+
     appendRowByHeader_(responsesSheet, responsesHeader, {
       timestamp: new Date(),
       allocation_id: data.allocation_id || '',
@@ -198,11 +207,11 @@ function doPost(e) {
       education: data.education || '',
       social_media_time: data.social_media_time || '',
       topic_familiarity: data.topic_familiarity || '',
-      understanding: data.understanding || '',
-      credibility: data.credibility || '',
-      willingness_to_share: data.willingness_to_share || '',
-      intent_strength: data.intent_strength || '',
-      purpose: data.purpose || ''
+      understanding: understanding,
+      credibility: credibility,
+      willingness_to_share: willingness,
+      has_purpose: intentStrength,
+      purpose_free_text: purpose
     });
 
     // 2) Mark allocation as submitted (best-effort).
