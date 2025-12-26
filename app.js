@@ -17,10 +17,20 @@ function getCurrentTextNumber() {
   return Math.min(completedCount + 1, TARGET_TEXT_COUNT);
 }
 
+function updateSubmitButtonLabel() {
+  const submitBtn = document.getElementById('submit-btn');
+  if (!submitBtn) return;
+  // Only update when enabled; loading states set their own label.
+  if (submitBtn.disabled) return;
+  const n = getCurrentTextNumber();
+  submitBtn.textContent = `Submit (Text ${n} of ${TARGET_TEXT_COUNT})`;
+}
+
 function updateProgressIndicator() {
   const el = document.getElementById('progress-indicator');
   if (!el) return;
   el.textContent = `Text ${getCurrentTextNumber()} of ${TARGET_TEXT_COUNT}`;
+  updateSubmitButtonLabel();
 }
 
 function isSurveyVisible() {
@@ -32,15 +42,12 @@ function isSurveyVisible() {
 function setSurveySubmitState(isLoading, loadingText) {
   const submitBtn = document.getElementById('submit-btn');
   if (!submitBtn) return;
-  if (!submitBtn.getAttribute('data-original-text')) {
-    submitBtn.setAttribute('data-original-text', submitBtn.textContent || 'Submit');
-  }
   if (isLoading) {
     submitBtn.disabled = true;
     submitBtn.textContent = loadingText || 'Loading...';
   } else {
     submitBtn.disabled = false;
-    submitBtn.textContent = submitBtn.getAttribute('data-original-text') || 'Submit';
+    updateSubmitButtonLabel();
   }
 }
 
@@ -546,11 +553,11 @@ async function handleSurveySubmit(event) {
     education: document.getElementById('education').value,
     social_media_time: document.getElementById('social-media-time').value,
     topic_familiarity: topicFamiliarityEl ? topicFamiliarityEl.value : '',
-    understanding_7: understandingEl ? understandingEl.value : '',
-    credibility_7: credibilityEl ? credibilityEl.value : '',
-    shareability_7: shareabilityEl ? shareabilityEl.value : '',
-    intent_strength_7: intentStrengthEl ? intentStrengthEl.value : '',
-    purpose_free_text: document.getElementById('purpose-text').value || ''
+    understanding: understandingEl ? understandingEl.value : '',
+    credibility: credibilityEl ? credibilityEl.value : '',
+    willingness_to_share: shareabilityEl ? shareabilityEl.value : '',
+    intent_strength: intentStrengthEl ? intentStrengthEl.value : '',
+    purpose: document.getElementById('purpose-text').value || ''
   };
   
   // Validate required fields
@@ -559,18 +566,18 @@ async function handleSurveySubmit(event) {
   
   if (
     !formData.topic_familiarity ||
-    !formData.understanding_7 ||
-    !formData.credibility_7 ||
-    !formData.shareability_7 ||
-    !formData.intent_strength_7 ||
-    (purposeRequired && !formData.purpose_free_text.trim())
+    !formData.understanding ||
+    !formData.credibility ||
+    !formData.willingness_to_share ||
+    !formData.intent_strength ||
+    (purposeRequired && !formData.purpose.trim())
   ) {
     const missing = [];
-    if (!formData.understanding_7) missing.push('Understanding');
-    if (!formData.credibility_7) missing.push('Credibility');
-    if (!formData.shareability_7) missing.push('Willingness to Share');
-    if (!formData.intent_strength_7) missing.push('Intent Strength');
-    if (purposeRequired && !formData.purpose_free_text.trim()) missing.push('Purpose (4.2)');
+    if (!formData.understanding) missing.push('Understanding');
+    if (!formData.credibility) missing.push('Credibility');
+    if (!formData.willingness_to_share) missing.push('Willingness to Share');
+    if (!formData.intent_strength) missing.push('Intent Strength');
+    if (purposeRequired && !formData.purpose.trim()) missing.push('Purpose (4.2)');
     if (!formData.topic_familiarity) missing.push('Topic Familiarity');
 
     alert('Please answer all required questions: ' + missing.join(', ') + '.');
