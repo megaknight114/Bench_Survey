@@ -32,7 +32,7 @@
     "text": "headline: Beware: Fake Beyoncé Tickets Are Costing Fans Thousands\n\ntext: With Beyoncé’s 2025 world tour selling out in minutes, fans are scrambling to secure a spot at the concerts. But now, reports are surfacing of scammers capitalizing on the frenzy by selling counterfeit tickets through sketchy websites and private social media groups. These phony passes come at sky-high prices—often double or triple the official cost—and leave desperate fans heartbroken when they’re denied entry at the venue.\nThe emotional toll is just as devastating as the financial loss. Many fans have invested months preparing for this moment—saving up, planning trips, even giving gifts to loved ones who couldn’t make it. Now, they’re being taken advantage of by fraudsters who prey on their excitement and fear of missing out.  \n\nWhat makes this scam so effective is how seamlessly it blends into the digital landscape. Scammers mimic legitimate resellers, use high-quality replicas of real ticket designs, and offer “limited-time” deals that play on urgency. Once the money is paid, there’s no recourse—just an empty wallet and a canceled dream.  \n\nIf you’re trying to get tickets, stick to trusted platforms like the official Beyoncé site or verified resellers. Never click on links from strangers or pay for tickets outside of known channels. And if something sounds too good to be true, it probably is.  \n\nThis isn’t just about money—it’s about protecting your passion and preventing these criminals from profiting off your love for music. Share this warning with fellow fans to help stop the spread of this growing scam before more people lose out."
   },
   {
-    "text_id": "baseline_qwen3-32b_003",
+    "text_id": "baseline_qwen3-32b_103",
     "model": "qwen3-32b",
     "language": "en",
     "topic": "Celebrity News",
@@ -752,7 +752,7 @@
     "text": "headline: 特斯拉自动驾驶再出事故，马斯克“拿中国人当小白鼠”遭实锤\n\ntext: 2025年12月，北京街头再次发生特斯拉自动驾驶测试车追尾事故，引发舆论哗然。这已是近期多起类似事件之一，但这一次，公众的愤怒终于被彻底点燃。特斯拉的技术究竟是否成熟？马斯克又为何屡次将未经充分验证的系统推上中国道路？不少网友指出，特斯拉在中国的快速扩张背后，是马斯克对安全问题的极度轻视。他一边在海外谨慎推进自动驾驶技术，一边却在中国大张旗鼓地进行路测，甚至不惜以普通民众的生命安全为代价。“拿中国人当小白鼠”，这一指控如今已不再只是网络情绪，而是越来越多理性声音中的共识。特斯拉并非不了解中国市场的风险，恰恰相反，他们正是看准了监管尚不完善的漏洞，才敢如此肆无忌惮。每一次事故都像一记重拳，击打着公众对特斯拉品牌的信任。如果企业领袖可以漠视公共安全，消费者还有什么理由继续为其买单？"
   },
   {
-    "text_id": "baseline_qwen3-32b_048",
+    "text_id": "baseline_qwen3-32b_003",
     "model": "qwen3-32b",
     "language": "zh",
     "topic": "Tech, Business & Finance",
