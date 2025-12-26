@@ -8,6 +8,83 @@ let startFromTextPage = false;
 
 const SESSION_ASSIGNED_TEXT_KEY = 'assigned_text';
 const SESSION_PARTICIPANT_CODE_KEY = 'participant_code';
+const SESSION_COMPLETED_COUNT_KEY = 'completed_count';
+
+const TARGET_TEXT_COUNT = 5;
+let completedCount = 0;
+
+function getCurrentTextNumber() {
+  return Math.min(completedCount + 1, TARGET_TEXT_COUNT);
+}
+
+function updateProgressIndicator() {
+  const el = document.getElementById('progress-indicator');
+  if (!el) return;
+  el.textContent = `Text ${getCurrentTextNumber()} of ${TARGET_TEXT_COUNT}`;
+}
+
+function isSurveyVisible() {
+  const el = document.getElementById('survey-section');
+  if (!el) return false;
+  return el.style.display !== 'none';
+}
+
+function setSurveySubmitState(isLoading, loadingText) {
+  const submitBtn = document.getElementById('submit-btn');
+  if (!submitBtn) return;
+  if (!submitBtn.getAttribute('data-original-text')) {
+    submitBtn.setAttribute('data-original-text', submitBtn.textContent || 'Submit');
+  }
+  if (isLoading) {
+    submitBtn.disabled = true;
+    submitBtn.textContent = loadingText || 'Loading...';
+  } else {
+    submitBtn.disabled = false;
+    submitBtn.textContent = submitBtn.getAttribute('data-original-text') || 'Submit';
+  }
+}
+
+function resetPage2Answers() {
+  const page2 = document.getElementById('survey-page-2');
+  if (!page2) return;
+
+  // Clear radios on page 2
+  const radios = page2.querySelectorAll('input[type="radio"]');
+  radios.forEach(r => { r.checked = false; });
+
+  // Clear and hide purpose dropdown
+  const purposeSelect = document.getElementById('purpose-text');
+  if (purposeSelect) purposeSelect.value = '';
+  updatePurposeFreeTextVisibility();
+}
+
+function renderAssignedText() {
+  if (!assignedText || !assignedText.text_id) return;
+  const mapEntry = textsMap[assignedText.text_id];
+  if (!mapEntry || !mapEntry.text) return;
+
+  const rawText = mapEntry.text;
+  const parsed = parseTextWithTitle(rawText);
+
+  const titleEl = document.getElementById('text-title');
+  const contentEl = document.getElementById('text-content');
+
+  if (titleEl && contentEl) {
+    if (parsed.title) {
+      titleEl.textContent = parsed.title;
+      titleEl.classList.add('has-title');
+      contentEl.classList.add('has-title');
+    } else {
+      titleEl.textContent = '';
+      titleEl.classList.remove('has-title');
+      contentEl.classList.remove('has-title');
+    }
+    contentEl.textContent = parsed.body;
+  }
+
+  updateProgressIndicator();
+  setSurveySubmitState(false);
+}
 
 function setConsentSubmitState(isLoading, loadingText) {
   const btn = document.querySelector('#consent-form button[type="submit"]');
@@ -40,6 +117,7 @@ function showSurveyPage(page) {
     page2.style.display = 'block';
     // Update purpose dropdown visibility when showing page 2
     updatePurposeFreeTextVisibility();
+    updateProgressIndicator();
   }
 
   // Force scroll-to-top after layout/scroll restoration; avoids the "flash then jump" effect.
@@ -56,6 +134,15 @@ function showSurveyPage(page) {
 document.addEventListener('DOMContentLoaded', function() {
   // Safety: ensure familiarity block is inside page 2 and placed before the buttons.
   normalizeSurveyDom();
+
+  // Restore completedCount (best-effort) so refresh mid-session doesn't break progress display.
+  try {
+    const savedCount = sessionStorage.getItem(SESSION_COMPLETED_COUNT_KEY);
+    if (savedCount != null) {
+      const n = parseInt(savedCount, 10);
+      if (!isNaN(n) && n >= 0) completedCount = n;
+    }
+  } catch (e) {}
 
   // Restore participant code for convenience within the same tab/session.
   try {
@@ -169,7 +256,14 @@ async function requestAssignment() {
     assignedText = data;
     try { sessionStorage.setItem(SESSION_ASSIGNED_TEXT_KEY, JSON.stringify(assignedText)); } catch (e) {}
     // Only show survey after consent; avoids race where user clicks consent before assignment returns.
-    if (consentGiven) showSurvey();
+    // If the survey is already visible (5-text loop), just render the next text in place.
+    if (consentGiven) {
+      if (isSurveyVisible()) {
+        renderAssignedText();
+      } else {
+        showSurvey();
+      }
+    }
     
   } catch (err) {
     console.error('Assignment error:', err);
@@ -242,28 +336,7 @@ function showSurvey() {
     return;
   }
   if (textsMap[assignedText.text_id] && textsMap[assignedText.text_id].text) {
-    const rawText = textsMap[assignedText.text_id].text;
-    const parsed = parseTextWithTitle(rawText);
-    
-    // Display title if it exists
-    const titleEl = document.getElementById('text-title');
-    const contentEl = document.getElementById('text-content');
-    
-    if (titleEl && contentEl) {
-      if (parsed.title) {
-        titleEl.textContent = parsed.title;
-        titleEl.style.display = 'block';
-        titleEl.classList.add('has-title');
-        contentEl.classList.add('has-title');
-      } else {
-        titleEl.style.display = 'none';
-        titleEl.classList.remove('has-title');
-        contentEl.classList.remove('has-title');
-      }
-      
-      // Display body
-      contentEl.textContent = parsed.body;
-    }
+    renderAssignedText();
     return;
   }
   showError(
@@ -304,6 +377,12 @@ function handleConsent(event) {
   try { sessionStorage.setItem(SESSION_PARTICIPANT_CODE_KEY, participantCode); } catch (e) {}
 
   consentGiven = true;
+
+  // Start a new 5-text session
+  completedCount = 0;
+  try { sessionStorage.setItem(SESSION_COMPLETED_COUNT_KEY, String(completedCount)); } catch (e) {}
+  updateProgressIndicator();
+
   // Clear old errors (if any)
   const errorDiv = document.getElementById('error-message');
   if (errorDiv) {
@@ -323,6 +402,11 @@ function handleConsent(event) {
 function resetForNewParticipation() {
   assignedText = null;
   try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
+
+  // Start a new 5-text session (same participant code)
+  completedCount = 0;
+  try { sessionStorage.setItem(SESSION_COMPLETED_COUNT_KEY, String(completedCount)); } catch (e) {}
+  updateProgressIndicator();
 
   // Preserve page-1 background answers so "Participate Again" can start from the text page.
   const bg = {
@@ -524,21 +608,35 @@ async function handleSurveySubmit(event) {
     if (result.error) {
       throw new Error(result.error);
     }
-    
-    // Show success message
-    document.getElementById('survey-section').style.display = 'none';
-    document.getElementById('success-section').style.display = 'block';
+ 
+    // Submission succeeded for this text
+    completedCount += 1;
+    try { sessionStorage.setItem(SESSION_COMPLETED_COUNT_KEY, String(completedCount)); } catch (e) {}
 
-    // Clear in-tab assignment so the next participation gets a new text
+    if (completedCount >= TARGET_TEXT_COUNT) {
+      // Finished all texts
+      document.getElementById('survey-section').style.display = 'none';
+      document.getElementById('success-section').style.display = 'block';
+      assignedText = null;
+      try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
+      return;
+    }
+
+    // Continue to next text (stay in survey, page 2)
+    setSurveySubmitState(true, 'Loading next text...');
+    resetPage2Answers();
     assignedText = null;
     try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
+    updateProgressIndicator();
+    showSurveyPage(2);
+    requestAssignment();
+    return;
     
   } catch (err) {
     console.error('Submission error:', err);
     const msg = (err && err.message) ? err.message : String(err);
     alert('Failed to submit responses: ' + msg);
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit';
+    setSurveySubmitState(false);
   }
 }
 
@@ -563,11 +661,26 @@ function onById(id, eventName, handler) {
     el.addEventListener(eventName, handler);
   }
 }
+
+function handleDone() {
+  // End of the 5-text session. Keep UI simple: return to the consent page.
+  completedCount = 0;
+  try { sessionStorage.removeItem(SESSION_COMPLETED_COUNT_KEY); } catch (e) {}
+  assignedText = null;
+  try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
+
+  const success = document.getElementById('success-section');
+  const survey = document.getElementById('survey-section');
+  const consent = document.getElementById('consent-section');
+  if (success) success.style.display = 'none';
+  if (survey) survey.style.display = 'none';
+  if (consent) consent.style.display = 'block';
+}
 onById('consent-form', 'submit', handleConsent);
 onById('survey-form', 'submit', handleSurveySubmit);
 onById('next-btn', 'click', handleNextPage);
 onById('back-btn', 'click', handleBackPage);
-onById('repeat-btn', 'click', resetForNewParticipation);
+onById('repeat-btn', 'click', handleDone);
 
 // Attach listeners to all intent-strength radio buttons for purpose gating
 // Use event delegation on the form since radios might not exist at load time
