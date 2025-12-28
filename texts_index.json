@@ -1,194 +1,402 @@
 [
   {
     "text_id": "baseline_qwen3-32b_001",
-    "topic": "Celebrity News"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_002",
-    "topic": "Celebrity News"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_003",
-    "topic": "Celebrity News"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_004",
-    "topic": "Celebrity News"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_005",
-    "topic": "Celebrity News"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_006",
-    "topic": "Celebrity News"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_007",
-    "topic": "Celebrity News"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_008",
-    "topic": "Celebrity News"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_009",
-    "topic": "Current Affairs"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_010",
-    "topic": "Current Affairs"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_011",
-    "topic": "Current Affairs"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_012",
-    "topic": "Current Affairs"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_013",
-    "topic": "Current Affairs"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_014",
-    "topic": "Current Affairs"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_015",
-    "topic": "Current Affairs"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_016",
-    "topic": "Current Affairs"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_017",
-    "topic": "Tech, Business & Finance"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_018",
-    "topic": "Tech, Business & Finance"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_019",
-    "topic": "Tech, Business & Finance"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_020",
-    "topic": "Tech, Business & Finance"
+    "topic": "Environment"
   },
   {
     "text_id": "baseline_qwen3-32b_021",
-    "topic": "Tech, Business & Finance"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_022",
-    "topic": "Tech, Business & Finance"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_023",
-    "topic": "Tech, Business & Finance"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_024",
-    "topic": "Tech, Business & Finance"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_025",
-    "topic": "Celebrity News"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_026",
-    "topic": "Celebrity News"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_027",
-    "topic": "Celebrity News"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_028",
-    "topic": "Celebrity News"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_029",
-    "topic": "Celebrity News"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_030",
-    "topic": "Celebrity News"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_031",
-    "topic": "Celebrity News"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_032",
-    "topic": "Celebrity News"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_033",
-    "topic": "Current Affairs"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_034",
-    "topic": "Current Affairs"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_035",
-    "topic": "Current Affairs"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_036",
-    "topic": "Current Affairs"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_037",
-    "topic": "Current Affairs"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_038",
-    "topic": "Current Affairs"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_039",
-    "topic": "Current Affairs"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_040",
-    "topic": "Current Affairs"
+    "topic": "Health"
   },
   {
     "text_id": "baseline_qwen3-32b_041",
-    "topic": "Tech, Business & Finance"
+    "topic": "Innovation"
   },
   {
     "text_id": "baseline_qwen3-32b_042",
-    "topic": "Tech, Business & Finance"
+    "topic": "Innovation"
   },
   {
     "text_id": "baseline_qwen3-32b_043",
-    "topic": "Tech, Business & Finance"
+    "topic": "Innovation"
   },
   {
     "text_id": "baseline_qwen3-32b_044",
-    "topic": "Tech, Business & Finance"
+    "topic": "Innovation"
   },
   {
     "text_id": "baseline_qwen3-32b_045",
-    "topic": "Tech, Business & Finance"
+    "topic": "Innovation"
   },
   {
     "text_id": "baseline_qwen3-32b_046",
-    "topic": "Tech, Business & Finance"
+    "topic": "Innovation"
   },
   {
     "text_id": "baseline_qwen3-32b_047",
-    "topic": "Tech, Business & Finance"
+    "topic": "Innovation"
   },
   {
     "text_id": "baseline_qwen3-32b_048",
-    "topic": "Tech, Business & Finance"
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_049",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_050",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_051",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_052",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_053",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_054",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_055",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_056",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_057",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_058",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_059",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_060",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_061",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_062",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_063",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_064",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_065",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_066",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_067",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_068",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_069",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_070",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_071",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_072",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_073",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_074",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_075",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_076",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_077",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_078",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_079",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_080",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_081",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_082",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_083",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_084",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_085",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_086",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_087",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_088",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_089",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_090",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_091",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_092",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_093",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_094",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_095",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_096",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_097",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_098",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_099",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_100",
+    "topic": "Safety"
   }
 ]
