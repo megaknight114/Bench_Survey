@@ -61,7 +61,7 @@ function setSkipButtonState(isLoading, loadingText) {
   if (isLoading) {
     btn.textContent = loadingText || 'Loading...';
   } else {
-    btn.textContent = btn.getAttribute('data-original-text') || 'Skip this text (display issue)';
+    btn.textContent = btn.getAttribute('data-original-text') || 'Report display issue & skip';
   }
 }
 
