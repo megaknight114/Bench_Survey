@@ -105,6 +105,7 @@ function renderAssignedText() {
 
   updateProgressIndicator();
   setSurveySubmitState(false);
+  setSkipButtonState(false);
 }
 
 function setConsentSubmitState(isLoading, loadingText) {
@@ -534,7 +535,7 @@ function validateSurveyPage1() {
     return false;
   }
   if (country && !String(country.value || '').trim()) {
-    alert('Please enter your country/region.');
+    alert('Please enter your country.');
     country.focus();
     return false;
   }
@@ -663,6 +664,7 @@ async function handleSurveySubmit(event) {
 
     // Continue to next text (stay in survey, page 2)
     setSurveySubmitState(true, 'Loading next text...');
+    setSkipButtonState(true, 'Loading next text...');
     resetPage2Answers();
     assignedText = null;
     try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
@@ -698,6 +700,14 @@ async function handleSkipText() {
   );
   if (!ok) return;
 
+  const detail = prompt('Please briefly describe the issue (required):', '');
+  if (detail == null) return; // user cancelled
+  const reasonDetail = String(detail || '').trim();
+  if (!reasonDetail) {
+    alert('Reason is required to skip.');
+    return;
+  }
+
   // Lock UI to prevent double submissions.
   setSurveySubmitState(true, 'Skipping...');
   setSkipButtonState(true, 'Skipping...');
@@ -716,8 +726,7 @@ async function handleSkipText() {
     // Skip/anomaly markers
     skipped_due_to_display_issue: '1',
     skip_reason: 'display_issue',
-    client_user_agent: (navigator && navigator.userAgent) ? String(navigator.userAgent) : '',
-    client_url: (location && location.href) ? String(location.href) : ''
+    skip_reason_detail: reasonDetail
   };
 
   try {
@@ -754,6 +763,8 @@ async function handleSkipText() {
     }
 
     // Continue to next text (stay in survey, page 2)
+    setSurveySubmitState(true, 'Loading next text...');
+    setSkipButtonState(true, 'Loading next text...');
     resetPage2Answers();
     assignedText = null;
     try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
