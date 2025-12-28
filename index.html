@@ -82,6 +82,17 @@
     #repeat-btn:hover {
       background: #27ae60 !important;
     }
+    /* Skip (display issue) button: keep it accessible but not too visually dominant */
+    #skip-text-btn {
+      background: transparent !important;
+      color: #c0392b !important;
+      border: 1px solid #e74c3c !important;
+      padding: 10px 14px !important;
+      font-size: 14px !important;
+    }
+    #skip-text-btn:hover {
+      background: #fbeaea !important;
+    }
     #text-title {
       background: #fff;
       padding: 20px 20px 10px 20px;
@@ -249,12 +260,15 @@
         <label for="education">3. What is your highest education level or current study stage?</label>
         <select id="education" required>
           <option value="">-- Select --</option>
-          <option value="High school or below">High school or below</option>
-          <option value="Associate degree / college diploma">Associate degree / college diploma</option>
-          <option value="Currently enrolled in Bachelor's program">Currently enrolled in Bachelor's program</option>
-          <option value="Bachelor's degree completed">Bachelor's degree completed</option>
-          <option value="Master's student / Master's degree completed">Master's student / Master's degree completed</option>
-          <option value="PhD student / PhD degree completed">PhD student / PhD degree completed</option>
+          <option value="Primary school (completed)">Primary school (completed)</option>
+          <option value="Middle school (completed)">Middle school (completed)</option>
+          <option value="High school (completed)">High school (completed)</option>
+          <option value="Associate/Bachelor's (currently enrolled)">Associate/Bachelor's (currently enrolled)</option>
+          <option value="Associate/Bachelor's (completed)">Associate/Bachelor's (completed)</option>
+          <option value="Master's (currently enrolled)">Master's (currently enrolled)</option>
+          <option value="Master's (completed)">Master's (completed)</option>
+          <option value="PhD (currently enrolled)">PhD (currently enrolled)</option>
+          <option value="PhD (completed)">PhD (completed)</option>
         </select>
 
         <label for="social-media-time">
@@ -443,18 +457,18 @@
         <div id="purpose-free-text-block" style="display:none;">
           <label for="purpose-text">
             4.2. From your perpective,which option best describes the text's <strong>main intent</strong>? <strong>(Required)</strong><br />
-            <span class="muted">These options describe strong influence attempts. If none fits, choose "Unclear / mixed".</span>
+            <span class="muted">These options describe influence attempts. If none fits, choose "Unclear / mixed".</span>
           </label>
           <select id="purpose-text" required>
             <option value="">-- Select --</option>
             <option value="opinion_shaping">
-              Trying to strongly steer opinions about a topic/group using claims that feel clearly misleading, exaggerated, or detached from reality
+              Trying to steer opinions about a topic/group using claims that feel clearly misleading, exaggerated, or detached from reality
             </option>
             <option value="attention_harvesting">
               Trying to catch an audience's attention
             </option>
             <option value="unclear">
-              Unclear / mixed / no strong intent to influence
+              Unclear / mixed / no clear intent to influence
             </option>
           </select>
         </div>
@@ -532,9 +546,9 @@
         <button
           type="button"
           id="skip-text-btn"
-          style="background:#e74c3c; margin-left:10px;"
+          style="margin-left:10px;"
         >
-          Skip this text (display issue)
+          Report display issue & skip
         </button>
       </div>
     </form>
@@ -552,7 +566,7 @@
     <button type="button" id="repeat-btn" style="margin-top:15px;">Done</button>
   </div>
 
-  <script src="config.js?v=20251228-1"></script>
-  <script src="app.js?v=20251228-1"></script>
+  <script src="config.js?v=20251228-2"></script>
+  <script src="app.js?v=20251228-2"></script>
 </body>
 </html>
