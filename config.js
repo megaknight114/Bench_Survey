@@ -8,7 +8,7 @@ const TEXTS_VERSION = '2025-12-26-16-07';
 const CONFIG = {
   // Get this URL after deploying your Apps Script as a Web App
   // Format: https://script.google.com/macros/s/AKfycbxxxxx/exec
-  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxSebFnSTl3pSNqtuWQns5ZRQFTqqyJChT5gxajWwirl_4WUCnlpCbEUHhsdqLyvLxE/exec',
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxT2HQzxratO-5zQWFk4wG4zqObpAomw6FSk5ldYSWTvJpm4U4ZbVpqWF9LtjDGWiNI/exec',
   
   // Optional: If you host texts.json elsewhere, change this URL
   // Add ?v=... to avoid stale GitHub Pages / browser caches.
