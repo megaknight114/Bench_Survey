@@ -271,6 +271,19 @@
           <option value="More than 4 hours">More than 4 hours</option>
         </select>
 
+        <label for="country">
+          5. Which country/region do you currently live in?
+          <span class="muted">(e.g., China, United States)</span>
+        </label>
+        <input
+          type="text"
+          id="country"
+          autocomplete="country-name"
+          inputmode="text"
+          placeholder="Country / Region"
+          required
+        />
+
         <button type="button" id="next-btn">Next</button>
       </div>
 
@@ -515,6 +528,21 @@
             <input type="radio" id="familiarity-7" name="topic-familiarity" value="7" />
             <label for="familiarity-7">7 = Very familiar</label>
           </div>
+        </div>
+
+        <div style="margin-top:16px; padding: 12px; border: 1px solid #f5c6cb; background:#f8d7da; border-radius: 6px;">
+          <strong>Having trouble reading the text?</strong>
+          <div class="muted" style="margin-top:6px;">
+            If the text content is missing, garbled, or the page is broken and you cannot read it, you can skip this text.
+            We will record this issue.
+          </div>
+          <button
+            type="button"
+            id="skip-text-btn"
+            style="background:#e74c3c; margin-top:10px;"
+          >
+            Skip this text (display issue)
+          </button>
         </div>
 
         <button type="button" id="back-btn" style="background:#6c7a89;margin-right:10px;">Back</button>
