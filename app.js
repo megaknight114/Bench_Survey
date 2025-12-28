@@ -51,6 +51,20 @@ function setSurveySubmitState(isLoading, loadingText) {
   }
 }
 
+function setSkipButtonState(isLoading, loadingText) {
+  const btn = document.getElementById('skip-text-btn');
+  if (!btn) return;
+  if (!btn.getAttribute('data-original-text')) {
+    btn.setAttribute('data-original-text', btn.textContent || '');
+  }
+  btn.disabled = !!isLoading;
+  if (isLoading) {
+    btn.textContent = loadingText || 'Loading...';
+  } else {
+    btn.textContent = btn.getAttribute('data-original-text') || 'Skip this text (display issue)';
+  }
+}
+
 function resetPage2Answers() {
   const page2 = document.getElementById('survey-page-2');
   if (!page2) return;
@@ -421,17 +435,20 @@ function resetForNewParticipation() {
     gender: '',
     age: '',
     education: '',
-    socialMediaTime: ''
+    socialMediaTime: '',
+    country: ''
   };
   try {
     const genderEl = document.getElementById('gender');
     const ageEl = document.getElementById('age');
     const educationEl = document.getElementById('education');
     const smtEl = document.getElementById('social-media-time');
+    const countryEl = document.getElementById('country');
     bg.gender = genderEl ? String(genderEl.value || '') : '';
     bg.age = ageEl ? String(ageEl.value || '') : '';
     bg.education = educationEl ? String(educationEl.value || '') : '';
     bg.socialMediaTime = smtEl ? String(smtEl.value || '') : '';
+    bg.country = countryEl ? String(countryEl.value || '') : '';
   } catch (e) {}
 
   // Reset survey form UI (keep participant code in the input for convenience)
@@ -455,10 +472,12 @@ function resetForNewParticipation() {
     const ageEl2 = document.getElementById('age');
     const educationEl2 = document.getElementById('education');
     const smtEl2 = document.getElementById('social-media-time');
+    const countryEl2 = document.getElementById('country');
     if (genderEl2) genderEl2.value = bg.gender;
     if (ageEl2) ageEl2.value = bg.age;
     if (educationEl2) educationEl2.value = bg.education;
     if (smtEl2) smtEl2.value = bg.socialMediaTime;
+    if (countryEl2) countryEl2.value = bg.country;
   } catch (e) {}
 
   updatePurposeFreeTextVisibility();
@@ -492,6 +511,7 @@ function validateSurveyPage1() {
   const age = document.getElementById('age');
   const education = document.getElementById('education');
   const socialMediaTime = document.getElementById('social-media-time');
+  const country = document.getElementById('country');
 
   if (gender && !gender.value) {
     alert('Please select your gender.');
@@ -511,6 +531,11 @@ function validateSurveyPage1() {
   if (socialMediaTime && !socialMediaTime.value) {
     alert('Please select your daily social media time.');
     socialMediaTime.focus();
+    return false;
+  }
+  if (country && !String(country.value || '').trim()) {
+    alert('Please enter your country/region.');
+    country.focus();
     return false;
   }
   return true;
@@ -542,7 +567,7 @@ async function handleSurveySubmit(event) {
   const understandingEl = document.querySelector('input[name="understanding"]:checked');
   const credibilityEl = document.querySelector('input[name="credibility"]:checked');
   const shareabilityEl = document.querySelector('input[name="shareability"]:checked');
-  const intentStrengthEl = document.querySelector('inputa[name="intent-strength"]:checked');
+  const intentStrengthEl = document.querySelector('input[name="intent-strength"]:checked');
   const beliefChangeEl = document.querySelector('input[name="belief-change"]:checked');
   
   const formData = {
@@ -554,6 +579,7 @@ async function handleSurveySubmit(event) {
     age: document.getElementById('age').value,
     education: document.getElementById('education').value,
     social_media_time: document.getElementById('social-media-time').value,
+    country: (document.getElementById('country').value || '').trim(),
     topic_familiarity: topicFamiliarityEl ? topicFamiliarityEl.value : '',
     understanding: understandingEl ? understandingEl.value : '',
     credibility: credibilityEl ? credibilityEl.value : '',
@@ -593,6 +619,7 @@ async function handleSurveySubmit(event) {
   const submitBtn = document.getElementById('submit-btn');
   submitBtn.disabled = true;
   submitBtn.textContent = 'Submitting...';
+  setSkipButtonState(true, 'Submitting...');
   
   try {
     // Submit to Apps Script
@@ -649,6 +676,97 @@ async function handleSurveySubmit(event) {
     const msg = (err && err.message) ? err.message : String(err);
     alert('Failed to submit responses: ' + msg);
     setSurveySubmitState(false);
+    setSkipButtonState(false);
+  }
+}
+
+async function handleSkipText() {
+  // Safety: ensure background fields are present even if user reaches page 2 unexpectedly.
+  if (!validateSurveyPage1()) {
+    showSurveyPage(1);
+    return;
+  }
+
+  if (!assignedText || !assignedText.text_id) {
+    alert('No text is currently assigned. Please wait a moment and try again.');
+    return;
+  }
+
+  const ok = confirm(
+    'Skip this text due to display/content issues?\n\n' +
+    'We will record this issue and move you to the next text.'
+  );
+  if (!ok) return;
+
+  // Lock UI to prevent double submissions.
+  setSurveySubmitState(true, 'Skipping...');
+  setSkipButtonState(true, 'Skipping...');
+
+  const payload = {
+    participant_code: participantCode,
+    allocation_id: assignedText && assignedText.allocation_id ? assignedText.allocation_id : '',
+    text_id: assignedText.text_id,
+    topic: assignedText.topic,
+    // Keep background fields (useful for analysis)
+    gender: document.getElementById('gender').value,
+    age: document.getElementById('age').value,
+    education: document.getElementById('education').value,
+    social_media_time: document.getElementById('social-media-time').value,
+    country: (document.getElementById('country').value || '').trim(),
+    // Skip/anomaly markers
+    skipped_due_to_display_issue: '1',
+    skip_reason: 'display_issue',
+    client_user_agent: (navigator && navigator.userAgent) ? String(navigator.userAgent) : '',
+    client_url: (location && location.href) ? String(location.href) : ''
+  };
+
+  try {
+    const response = await fetch(CONFIG.APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const text = await response.text().catch(() => '');
+      throw new Error(`Skip submission failed (HTTP ${response.status}). ${text}`.trim());
+    }
+
+    let result;
+    try {
+      result = await response.json();
+    } catch (e) {
+      const text = await response.text().catch(() => '');
+      throw new Error(`Invalid JSON response from server. ${text}`.trim());
+    }
+    if (result && result.error) throw new Error(result.error);
+
+    // Consider skipped text as "completed" and move on.
+    completedCount += 1;
+    try { sessionStorage.setItem(SESSION_COMPLETED_COUNT_KEY, String(completedCount)); } catch (e) {}
+
+    if (completedCount >= TARGET_TEXT_COUNT) {
+      document.getElementById('survey-section').style.display = 'none';
+      document.getElementById('success-section').style.display = 'block';
+      assignedText = null;
+      try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
+      return;
+    }
+
+    // Continue to next text (stay in survey, page 2)
+    resetPage2Answers();
+    assignedText = null;
+    try { sessionStorage.removeItem(SESSION_ASSIGNED_TEXT_KEY); } catch (e) {}
+    updateProgressIndicator();
+    showSurveyPage(2);
+    requestAssignment();
+    return;
+  } catch (err) {
+    console.error('Skip submission error:', err);
+    const msg = (err && err.message) ? err.message : String(err);
+    alert('Failed to record skip: ' + msg);
+    setSurveySubmitState(false);
+    setSkipButtonState(false);
   }
 }
 
@@ -693,6 +811,7 @@ onById('survey-form', 'submit', handleSurveySubmit);
 onById('next-btn', 'click', handleNextPage);
 onById('back-btn', 'click', handleBackPage);
 onById('repeat-btn', 'click', handleDone);
+onById('skip-text-btn', 'click', handleSkipText);
 
 // Attach listeners to all intent-strength radio buttons for purpose gating
 // Use event delegation on the form since radios might not exist at load time
