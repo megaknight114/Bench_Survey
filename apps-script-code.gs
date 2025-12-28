@@ -4,7 +4,7 @@
  * SETUP INSTRUCTIONS:
  * 1. Create a Google Sheet with two tabs: "responses" and "assignments"
  * 2. In "responses" tab, add header row:
- *    timestamp, allocation_id, participant_code, text_id, topic, gender, age, education, social_media_time, topic_familiarity, understanding, credibility, willingness_to_share, has_purpose, purpose_free_text
+ *    timestamp, allocation_id, participant_code, text_id, topic, gender, age, education, social_media_time, topic_familiarity, belief_change, understanding, credibility, willingness_to_share, has_purpose, purpose_free_text
  * 3. In "assignments" tab, add header row:
  *    assigned_at, allocation_id, participant_code, text_id, topic, status, submitted_at
  * 4. Replace YOUR_SHEET_ID below with your Sheet ID (from the URL)
@@ -53,6 +53,7 @@ const RESPONSES_REQUIRED_HEADERS = [
   'education',
   'social_media_time',
   'topic_familiarity',
+  'belief_change',
   // Canonical
   'understanding',
   'credibility',
@@ -195,6 +196,7 @@ function doPost(e) {
     const willingness = data.willingness_to_share || data.shareability_7 || '';
     const intentStrength = data.intent_strength || data.intent_strength_7 || data.has_purpose || '';
     const purpose = data.purpose || data.purpose_free_text || '';
+    const beliefChange = data.belief_change || data.belief_change_7 || '';
 
     appendRowByHeader_(responsesSheet, responsesHeader, {
       timestamp: new Date(),
@@ -207,6 +209,7 @@ function doPost(e) {
       education: data.education || '',
       social_media_time: data.social_media_time || '',
       topic_familiarity: data.topic_familiarity || '',
+      belief_change: beliefChange,
       understanding: understanding,
       credibility: credibility,
       willingness_to_share: willingness,
