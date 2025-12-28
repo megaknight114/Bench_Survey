@@ -398,7 +398,7 @@
 
         <label>
           4. <strong>Intent</strong><br />
-          Do you think this text has a <strong>strong intent</strong> to influence readers (beyond simply sharing information)?
+          Do you think this text is written with a strong intent?
         </label>
         <div class="radio-group">
           <input type="radio" id="intent-strength-1" name="intent-strength" value="1" required />
@@ -432,7 +432,7 @@
         <!-- Keep the same block id so your existing show/hide logic can stay -->
         <div id="purpose-free-text-block" style="display:none;">
           <label for="purpose-text">
-            4.2. Based on your intent rating, which option best describes the text's <strong>main intent</strong>? <strong>(Required)</strong><br />
+            4.2. From your perpective,which option best describes the text's <strong>main intent</strong>? <strong>(Required)</strong><br />
             <span class="muted">These options describe strong influence attempts. If none fits, choose "Unclear / mixed".</span>
           </label>
           <select id="purpose-text" required>
@@ -440,11 +440,8 @@
             <option value="opinion_shaping">
               Trying to strongly steer opinions about a topic/group using claims that feel clearly misleading, exaggerated, or detached from reality
             </option>
-            <option value="image_damage">
-              Trying to seriously damage a person's or organization's reputation (e.g., accusations, negative framing, or character attacks)
-            </option>
-            <option value="action_prompt">
-              Trying to push readers toward an economic action that could benefit someone (e.g., buy, invest, donate, pay, sign up), especially using pressure, hype, or fear of missing out
+            <option value="attention_harvesting">
+              Trying to an audience's attention
             </option>
             <option value="unclear">
               Unclear / mixed / no strong intent to influence
@@ -452,9 +449,42 @@
           </select>
         </div>
 
+        <label>
+          5. <strong>Belief Change</strong><br />
+          To what extent did this text change your prior understanding or beliefs about the topic?
+        </label>
+        <div class="radio-group">
+          <input type="radio" id="belief-change-1" name="belief-change" value="1" required />
+          <label for="belief-change-1">1 = Not at all</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="belief-change-2" name="belief-change" value="2" />
+          <label for="belief-change-2">2 = Very little</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="belief-change-3" name="belief-change" value="3" />
+          <label for="belief-change-3">3 = A little</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="belief-change-4" name="belief-change" value="4" />
+          <label for="belief-change-4">4 = Unsure / Neutral</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="belief-change-5" name="belief-change" value="5" />
+          <label for="belief-change-5">5 = Somewhat</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="belief-change-6" name="belief-change" value="6" />
+          <label for="belief-change-6">6 = A lot</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="belief-change-7" name="belief-change" value="7" />
+          <label for="belief-change-7">7 = A great deal</label>
+        </div>
+
         <div id="topic-familiarity-block">
           <label id="topic-familiarity-question">
-            5.<strong>Topic familarity</strong><br /> 
+            6.<strong>Topic familarity</strong><br /> 
             Overall, how familiar are you with the topic of the text you just read?
           </label>
           <div class="radio-group">
@@ -505,7 +535,7 @@
     <button type="button" id="repeat-btn" style="margin-top:15px;">Done</button>
   </div>
 
-  <script src="config.js?v=20251226-1"></script>
-  <script src="app.js?v=20251226-1"></script>
+  <script src="config.js?v=20251228-1"></script>
+  <script src="app.js?v=20251228-1"></script>
 </body>
 </html>
