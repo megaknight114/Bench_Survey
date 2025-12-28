@@ -542,7 +542,8 @@ async function handleSurveySubmit(event) {
   const understandingEl = document.querySelector('input[name="understanding"]:checked');
   const credibilityEl = document.querySelector('input[name="credibility"]:checked');
   const shareabilityEl = document.querySelector('input[name="shareability"]:checked');
-  const intentStrengthEl = document.querySelector('input[name="intent-strength"]:checked');
+  const intentStrengthEl = document.querySelector('inputa[name="intent-strength"]:checked');
+  const beliefChangeEl = document.querySelector('input[name="belief-change"]:checked');
   
   const formData = {
     participant_code: participantCode,
@@ -558,6 +559,7 @@ async function handleSurveySubmit(event) {
     credibility: credibilityEl ? credibilityEl.value : '',
     willingness_to_share: shareabilityEl ? shareabilityEl.value : '',
     intent_strength: intentStrengthEl ? intentStrengthEl.value : '',
+    belief_change: beliefChangeEl ? beliefChangeEl.value : '',
     purpose: document.getElementById('purpose-text').value || ''
   };
   
@@ -571,6 +573,7 @@ async function handleSurveySubmit(event) {
     !formData.credibility ||
     !formData.willingness_to_share ||
     !formData.intent_strength ||
+    !formData.belief_change ||
     (purposeRequired && !formData.purpose.trim())
   ) {
     const missing = [];
@@ -578,6 +581,7 @@ async function handleSurveySubmit(event) {
     if (!formData.credibility) missing.push('Credibility');
     if (!formData.willingness_to_share) missing.push('Willingness to Share');
     if (!formData.intent_strength) missing.push('Intent Strength');
+    if (!formData.belief_change) missing.push('Belief Change');
     if (purposeRequired && !formData.purpose.trim()) missing.push('Purpose (4.2)');
     if (!formData.topic_familiarity) missing.push('Topic Familiarity');
 
