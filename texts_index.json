@@ -1,6 +1,22 @@
 [
   {
+    "text_id": "baseline_gemini-3-pro-preview_001",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_001",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_001",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_002",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_002",
     "topic": "Environment"
   },
   {
@@ -8,7 +24,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_003",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_003",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_003",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_004",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_004",
     "topic": "Environment"
   },
   {
@@ -16,7 +48,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_005",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_005",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_005",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_006",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_006",
     "topic": "Environment"
   },
   {
@@ -24,7 +72,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_007",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_007",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_007",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_008",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_008",
     "topic": "Environment"
   },
   {
@@ -32,7 +96,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_009",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_009",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_009",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_010",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_010",
     "topic": "Environment"
   },
   {
@@ -40,7 +120,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_011",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_011",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_011",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_012",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_012",
     "topic": "Environment"
   },
   {
@@ -48,7 +144,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_013",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_013",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_013",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_014",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_014",
     "topic": "Environment"
   },
   {
@@ -56,7 +168,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_015",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_015",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_015",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_016",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_016",
     "topic": "Environment"
   },
   {
@@ -64,7 +192,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_017",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_017",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_017",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_018",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_018",
     "topic": "Environment"
   },
   {
@@ -72,7 +216,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_019",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_019",
+    "topic": "Environment"
+  },
+  {
     "text_id": "baseline_qwen3-32b_019",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_020",
+    "topic": "Environment"
+  },
+  {
+    "text_id": "baseline_qwen-plus_020",
     "topic": "Environment"
   },
   {
@@ -80,7 +240,23 @@
     "topic": "Environment"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_021",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_021",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_021",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_022",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_022",
     "topic": "Health"
   },
   {
@@ -88,7 +264,23 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_023",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_023",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_023",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_024",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_024",
     "topic": "Health"
   },
   {
@@ -96,7 +288,23 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_025",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_025",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_025",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_026",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_026",
     "topic": "Health"
   },
   {
@@ -104,7 +312,15 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_027",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_027",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_028",
     "topic": "Health"
   },
   {
@@ -112,7 +328,19 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_029",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_029",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_029",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_030",
     "topic": "Health"
   },
   {
@@ -120,7 +348,23 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_031",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_031",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_031",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_032",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_032",
     "topic": "Health"
   },
   {
@@ -128,7 +372,19 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_033",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_033",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_034",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_034",
     "topic": "Health"
   },
   {
@@ -136,7 +392,23 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_035",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_035",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_035",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_036",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_036",
     "topic": "Health"
   },
   {
@@ -144,7 +416,19 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_037",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_037",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_038",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_038",
     "topic": "Health"
   },
   {
@@ -152,7 +436,19 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_039",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_qwen-plus_039",
+    "topic": "Health"
+  },
+  {
     "text_id": "baseline_qwen3-32b_039",
+    "topic": "Health"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_040",
     "topic": "Health"
   },
   {
@@ -160,7 +456,23 @@
     "topic": "Health"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_041",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_041",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_041",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_042",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_042",
     "topic": "Innovation"
   },
   {
@@ -168,7 +480,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_043",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_043",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_043",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_044",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_044",
     "topic": "Innovation"
   },
   {
@@ -176,7 +504,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_045",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_045",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_045",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_046",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_046",
     "topic": "Innovation"
   },
   {
@@ -184,7 +528,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_047",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_047",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_047",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_048",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_048",
     "topic": "Innovation"
   },
   {
@@ -192,7 +552,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_049",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_049",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_049",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_050",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_050",
     "topic": "Innovation"
   },
   {
@@ -200,7 +576,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_051",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_051",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_051",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_052",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_052",
     "topic": "Innovation"
   },
   {
@@ -208,7 +600,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_053",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_053",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_053",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_054",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_054",
     "topic": "Innovation"
   },
   {
@@ -216,7 +624,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_055",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_055",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_055",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_056",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_056",
     "topic": "Innovation"
   },
   {
@@ -224,7 +648,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_057",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_057",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_057",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_058",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_058",
     "topic": "Innovation"
   },
   {
@@ -232,7 +672,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_059",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_059",
+    "topic": "Innovation"
+  },
+  {
     "text_id": "baseline_qwen3-32b_059",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_060",
+    "topic": "Innovation"
+  },
+  {
+    "text_id": "baseline_qwen-plus_060",
     "topic": "Innovation"
   },
   {
@@ -240,7 +696,23 @@
     "topic": "Innovation"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_061",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_061",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_061",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_062",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_062",
     "topic": "Livelihood"
   },
   {
@@ -248,7 +720,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_063",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_063",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_063",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_064",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_064",
     "topic": "Livelihood"
   },
   {
@@ -256,7 +744,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_065",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_065",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_065",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_066",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_066",
     "topic": "Livelihood"
   },
   {
@@ -264,7 +768,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_067",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_067",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_067",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_068",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_068",
     "topic": "Livelihood"
   },
   {
@@ -272,7 +792,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_069",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_069",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_069",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_070",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_070",
     "topic": "Livelihood"
   },
   {
@@ -280,7 +816,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_071",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_071",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_071",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_072",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_072",
     "topic": "Livelihood"
   },
   {
@@ -288,7 +840,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_073",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_073",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_073",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_074",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_074",
     "topic": "Livelihood"
   },
   {
@@ -296,7 +864,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_075",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_075",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_075",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_076",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_076",
     "topic": "Livelihood"
   },
   {
@@ -304,7 +888,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_077",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_077",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_077",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_078",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_078",
     "topic": "Livelihood"
   },
   {
@@ -312,7 +912,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_079",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_079",
+    "topic": "Livelihood"
+  },
+  {
     "text_id": "baseline_qwen3-32b_079",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_080",
+    "topic": "Livelihood"
+  },
+  {
+    "text_id": "baseline_qwen-plus_080",
     "topic": "Livelihood"
   },
   {
@@ -320,7 +936,23 @@
     "topic": "Livelihood"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_081",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_081",
+    "topic": "Safety"
+  },
+  {
     "text_id": "baseline_qwen3-32b_081",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_082",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_082",
     "topic": "Safety"
   },
   {
@@ -328,7 +960,23 @@
     "topic": "Safety"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_083",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_083",
+    "topic": "Safety"
+  },
+  {
     "text_id": "baseline_qwen3-32b_083",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_084",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_084",
     "topic": "Safety"
   },
   {
@@ -336,7 +984,23 @@
     "topic": "Safety"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_085",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_085",
+    "topic": "Safety"
+  },
+  {
     "text_id": "baseline_qwen3-32b_085",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_086",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_086",
     "topic": "Safety"
   },
   {
@@ -344,7 +1008,23 @@
     "topic": "Safety"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_087",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_087",
+    "topic": "Safety"
+  },
+  {
     "text_id": "baseline_qwen3-32b_087",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_088",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_088",
     "topic": "Safety"
   },
   {
@@ -352,7 +1032,23 @@
     "topic": "Safety"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_089",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_089",
+    "topic": "Safety"
+  },
+  {
     "text_id": "baseline_qwen3-32b_089",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_090",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_090",
     "topic": "Safety"
   },
   {
@@ -360,7 +1056,23 @@
     "topic": "Safety"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_091",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_091",
+    "topic": "Safety"
+  },
+  {
     "text_id": "baseline_qwen3-32b_091",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_092",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_092",
     "topic": "Safety"
   },
   {
@@ -368,7 +1080,23 @@
     "topic": "Safety"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_093",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_093",
+    "topic": "Safety"
+  },
+  {
     "text_id": "baseline_qwen3-32b_093",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_094",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_094",
     "topic": "Safety"
   },
   {
@@ -376,7 +1104,23 @@
     "topic": "Safety"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_095",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_095",
+    "topic": "Safety"
+  },
+  {
     "text_id": "baseline_qwen3-32b_095",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_096",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_096",
     "topic": "Safety"
   },
   {
@@ -384,7 +1128,23 @@
     "topic": "Safety"
   },
   {
+    "text_id": "baseline_gemini-3-pro-preview_097",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_097",
+    "topic": "Safety"
+  },
+  {
     "text_id": "baseline_qwen3-32b_097",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_gemini-3-pro-preview_098",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen-plus_098",
     "topic": "Safety"
   },
   {
@@ -392,11 +1152,15 @@
     "topic": "Safety"
   },
   {
-    "text_id": "baseline_qwen3-32b_099",
+    "text_id": "baseline_gemini-3-pro-preview_099",
     "topic": "Safety"
   },
   {
-    "text_id": "baseline_qwen3-32b_100",
+    "text_id": "baseline_qwen-plus_099",
+    "topic": "Safety"
+  },
+  {
+    "text_id": "baseline_qwen3-32b_099",
     "topic": "Safety"
   }
 ]
