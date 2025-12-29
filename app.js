@@ -567,6 +567,7 @@ async function handleSurveySubmit(event) {
   const topicFamiliarityEl = document.querySelector('input[name="topic-familiarity"]:checked');
   const understandingEl = document.querySelector('input[name="understanding"]:checked');
   const credibilityEl = document.querySelector('input[name="credibility"]:checked');
+  const attentionCheckEl = document.querySelector('input[name="attention-check"]:checked');
   const shareabilityEl = document.querySelector('input[name="shareability"]:checked');
   const intentStrengthEl = document.querySelector('input[name="intent-strength"]:checked');
   const beliefChangeEl = document.querySelector('input[name="belief-change"]:checked');
@@ -584,6 +585,7 @@ async function handleSurveySubmit(event) {
     topic_familiarity: topicFamiliarityEl ? topicFamiliarityEl.value : '',
     understanding: understandingEl ? understandingEl.value : '',
     credibility: credibilityEl ? credibilityEl.value : '',
+    attention_check: attentionCheckEl ? attentionCheckEl.value : '',
     willingness_to_share: shareabilityEl ? shareabilityEl.value : '',
     intent_strength: intentStrengthEl ? intentStrengthEl.value : '',
     belief_change: beliefChangeEl ? beliefChangeEl.value : '',
@@ -598,6 +600,7 @@ async function handleSurveySubmit(event) {
     !formData.topic_familiarity ||
     !formData.understanding ||
     !formData.credibility ||
+    !formData.attention_check ||
     !formData.willingness_to_share ||
     !formData.intent_strength ||
     !formData.belief_change ||
@@ -606,6 +609,7 @@ async function handleSurveySubmit(event) {
     const missing = [];
     if (!formData.understanding) missing.push('Understanding');
     if (!formData.credibility) missing.push('Credibility');
+    if (!formData.attention_check) missing.push('Attention Check');
     if (!formData.willingness_to_share) missing.push('Willingness to Share');
     if (!formData.intent_strength) missing.push('Intent Strength');
     if (!formData.belief_change) missing.push('Belief Change');
